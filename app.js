@@ -14,7 +14,6 @@ const basicAuthenticationDeserializer = require('./middleware/basic-authenticati
 const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js');
 const indexRouter = require('./routes/index');
 const authenticationRouter = require('./routes/authentication');
-
 const app = express();
 
 app.set('views', join(__dirname, 'views'));
