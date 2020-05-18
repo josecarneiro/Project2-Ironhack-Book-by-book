@@ -54,10 +54,9 @@ app.use(
 );
 app.use(basicAuthenticationDeserializer);
 app.use(bindUserToViewLocals);
-
+app.use('/book', bookRouter);
 app.use('/', indexRouter);
 app.use('/authentication', authenticationRouter);
-app.use('/book', bookRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {

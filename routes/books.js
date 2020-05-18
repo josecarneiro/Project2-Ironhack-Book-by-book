@@ -12,5 +12,10 @@ bookRouter.get('/test', (req, res, next) => {
   res.render('book/singleBook');
 });
 
+bookRouter.get('/test/create', (req, res, next) => {
+  // /:id
+  res.render('book/AddBookLogic');
+});
+
 //
 module.exports = bookRouter;
