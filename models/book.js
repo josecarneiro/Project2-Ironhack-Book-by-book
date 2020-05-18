@@ -1,8 +1,7 @@
-'use strict';
 
 const mongoose = require('mongoose');
 
-const schema = new mongoose.Schema({
+const bookschema = new mongoose.Schema({
   bookTitle: {
     type: String,
     trim: true
@@ -21,4 +20,5 @@ const schema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Book', schema);
+const Book = mongoose.model('Book', bookschema);
+module.exports = Book;
