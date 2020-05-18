@@ -15,6 +15,7 @@ const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js')
 const indexRouter = require('./routes/index');
 const addbookRouter = require('./routes/addbook');
 const authenticationRouter = require('./routes/authentication');
+const bookRouter = require('./routes/books');
 const app = express();
 
 app.set('views', join(__dirname, 'views'));
@@ -25,8 +26,7 @@ app.use(
   sassMiddleware({
     src: join(__dirname, 'public'),
     dest: join(__dirname, 'public'),
-    outputStyle:
-      process.env.NODE_ENV === 'development' ? 'nested' : 'compressed',
+    outputStyle: process.env.NODE_ENV === 'development' ? 'nested' : 'compressed',
     force: process.env.NODE_ENV === 'development',
     sourceMap: true
   })
@@ -54,7 +54,7 @@ app.use(
 );
 app.use(basicAuthenticationDeserializer);
 app.use(bindUserToViewLocals);
-
+app.use('/book', bookRouter);
 app.use('/', indexRouter);
 app.use('/authentication', authenticationRouter);
 app.use('/user', addbookRouter);
