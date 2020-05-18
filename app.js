@@ -1,7 +1,6 @@
 'use strict';
 
 const { join } = require('path');
-
 const express = require('express');
 const createError = require('http-errors');
 const connectMongo = require('connect-mongo');
@@ -14,6 +13,7 @@ const serveFavicon = require('serve-favicon');
 const basicAuthenticationDeserializer = require('./middleware/basic-authentication-deserializer.js');
 const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js');
 const indexRouter = require('./routes/index');
+const addbookRouter = require('./routes/addbook');
 const authenticationRouter = require('./routes/authentication');
 const bookRouter = require('./routes/books');
 const app = express();
@@ -57,6 +57,7 @@ app.use(bindUserToViewLocals);
 app.use('/book', bookRouter);
 app.use('/', indexRouter);
 app.use('/authentication', authenticationRouter);
+app.use('/user', addbookRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
