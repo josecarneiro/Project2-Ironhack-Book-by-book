@@ -1,6 +1,7 @@
 'use strict';
 
 const { join } = require('path');
+
 const express = require('express');
 const createError = require('http-errors');
 const connectMongo = require('connect-mongo');
