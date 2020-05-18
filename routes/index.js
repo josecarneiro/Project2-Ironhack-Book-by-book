@@ -5,11 +5,14 @@ const router = new Router();
 const routeGuard = require('./../middleware/route-guard');
 
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Hello World!' });
+  res.render('index', { 
+    style: 'home.css' });
 });
 
 router.get('/private', routeGuard, (req, res, next) => {
-  res.render('private');
+  res.render('private',{
+    style: 'style.css' 
+  });
 });
 
 module.exports = router;

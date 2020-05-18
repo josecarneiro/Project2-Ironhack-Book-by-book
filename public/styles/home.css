@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Monda:wght@700&display=swap');
+
+body{
+    background-image: url('/images/homepage.jpg');
+    background-size: cover;
+    /* background-position: center ; */
+    background-repeat: repeat;
+    font-family: 'Monda', sans-serif;
+}
+h1{
+    color: white;
+    margin-left: -100px;
+    margin-top: 4.5em;
+    font-size: 65px;
+    text-shadow: -2px 2px #cdd2d5, 2px 2px 0px black;
+}
+p{
+    color: white;
+    font-size: 24px;
+    margin-left: -100px;
+    margin-top: 3em;
+    text-shadow: -2px 0px #000000;
+}
+nav{
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgb(248, 248, 248);
+    padding: 1em;
+}
+nav a{
+    display: flex;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+
+}
+.boxHomePage{
+    width:600px;
+    height:400px;
+    background: white;
+    opacity: 0.6;
+    margin: 200px -150px 0px 0px;
+    
+    
+}
