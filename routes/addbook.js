@@ -6,7 +6,9 @@ const Book = require('../models/book');
 
 
 router.get('/bookcreate', (req, res, next) => {
-  res.render('user/addbook');
+  res.render('user/addbook',{
+    style: 'style.css'
+  });
   });
 
 router.post('/bookcreate', (req, res, next) => {

@@ -9,12 +9,16 @@ const routerguard = require('./../middleware/route-guard');
 
 bookRouter.get('/test', (req, res, next) => {
   // /:id
-  res.render('book/singleBook');
+  res.render('book/singleBook',{
+    style: 'style.css'
+  });
 });
 
 bookRouter.get('/test/create', (req, res, next) => {
   // /:id
-  res.render('book/AddBookLogic');
+  res.render('book/AddBookLogic',{
+    style: 'style.css'
+  });
 });
 
 //
