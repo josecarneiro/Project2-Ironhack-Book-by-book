@@ -1,2 +1,9 @@
 <h1>User Profile</h1>
-<p>{{name}}</p>
+<h2><p>{{user.name}}</p></h2>
+{{#if owner}} 
+<form action="/profile/{{user._id}}/edit" method="get">
+  <button>Edit</button>
+</form>
+{{/if}}
+
+
