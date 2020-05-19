@@ -6,13 +6,15 @@
     <button type='submit'>Search</button>
 </form>
 <ul>
-    {{#each titleResults }}
+    {{#each titleResults}}
         <li class='book-item'>
-            <a href='book/create'>
-                {{!-- {{> titleResults }} --}}
-            </a>
+            {{!-- {{#each authorResults}}
+                <li class='book-item'></li>
+                {{this}}
+            {{/each}} --}}
         </li>
         {{this}}
+        {{authorResults}}
     {{/each}}
 </ul>
 
