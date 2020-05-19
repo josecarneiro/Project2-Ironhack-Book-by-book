@@ -37,12 +37,19 @@ router.get('/search', (req, res) => {
     //    https://www.googleapis.com/books/v1/volumes?q=${title}:keyes&key=${}
     //   `https://www.googleapis.com/books/v1/volumes?q=${text}&startIndex=0&maxResults=40`
     .then(result => {
-      const titleResults = result.data.items.map(books => books.volumeInfo.title);
-      const authorResults = result.data.items.map(books => books.volumeInfo.authors);
-      console.log(result.data);
+      const titleResults = result.data.items.map(books => {
+        let infoBook = '';
+        return infoBook = `${books.volumeInfo.title} - ${books.volumeInfo.authors}`; 
+      });
+      const idResults = result.data.items.map(books => {
+        let bookId = '';
+        return bookId = `${books.id}`; 
+      });
+      console.log(idResults);
+      // const authorResults = result.data.items.map(books => books.volumeInfo.authors);
+      // console.log(authorResults);
       res.render('user/searchbook', {
-        titleResults,
-        authorResults
+        titleResults 
       });
     })
     .catch(error =>{

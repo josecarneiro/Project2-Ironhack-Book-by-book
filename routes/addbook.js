@@ -21,11 +21,10 @@
         booksComment
       })
         .then(book => {
-          console.log('works');
           res.render('user/addbook');
         })
         .catch(error => {
-          next(error)
+          next(error);
         });
     });
 
