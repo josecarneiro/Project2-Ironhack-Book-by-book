@@ -1,10 +1,22 @@
 <h1>Add a Book</h1>
 
- <form action='/user/bookcreate' method='POST'>
+ <form action='/book/create' method='POST'>
     <input id='title-input' name='title' type='text' placeholder='Search a title book here...'> 
     {{!-- <label for='author-input'>{{XXXX}}</label> LINKAR AUTHOR DA API--}}
     
     <input id='comment-input' name='comment' type='text' placeholder='Insert your comment about the book...'> 
+
+    <label for='lat-input'></label>
+    <input type='text' name='lat' id='lat-input'>
+    <label for='lng-input'></label>
+    <input type='text' name='lng' id='lng-input'>
+
     
     <button type='submit'>Submit book</button>
 </form>
+
+<div id='map-view'>
+</div>
+
+  <script src='/scripts/mapsCreate.js'></script>
+  <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCvNd635sKmUOsRjS--aKxAHfNu9bwD7QU&callback=initMap'></script>

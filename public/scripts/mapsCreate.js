@@ -15,7 +15,8 @@ function initMap() {
       };
 
       $latinput.value = Math.floor(pos.lat);
-      $lnginput.value = Math.floor(pos.lng);
+      $lnginput.value = pos.lng;
+      console.log($lnginput.value);
       const map = new google.maps.Map(document.getElementById('map-view'), {
         zoom: 15,
         center: { lat: pos.lat, lng: pos.lng }
