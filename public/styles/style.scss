@@ -82,3 +82,11 @@ textarea {
   height: 15em;
 }
 
+#profile-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#profile-picture img {
+  width: 1em;
+}

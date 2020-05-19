@@ -17,7 +17,7 @@ const addbookRouter = require('./routes/addbook');
 const authenticationRouter = require('./routes/authentication');
 const bookRouter = require('./routes/books');
 const app = express();
-const fileUploader = require('./middleware/upload-file');
+const uploader = require('./middleware/uploader');
 const profileRouter = require('./routes/profile');
 
 app.set('views', join(__dirname, 'views'));

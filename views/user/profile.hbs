@@ -1,9 +1,21 @@
-<h1>User Profile</h1>
-<h2><p>{{user.name}}</p></h2>
-{{#if owner}} 
-<form action="/profile/{{user._id}}/edit" method="get">
-  <button>Edit</button>
-</form>
-{{/if}}
+<h2>{{user.name}}</h2>
+<div id="profile-container">
+
+  <h3>{{user.email}}</h3>
+  <p>{{user.about}}</p>
+
+ 
+  <img id="profile-picture" src="{{user.avatar}}" alt="" srcset="">
+ 
+
+
+   {{#if owner}} 
+  <a href="/profile/{{user._id}}/edit"><button>Edit</button></a> 
+  {{/if}}  
+  
+ 
+
+  
+</div>
 
 
