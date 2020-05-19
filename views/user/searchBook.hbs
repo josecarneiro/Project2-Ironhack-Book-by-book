@@ -1,0 +1,18 @@
+<h1>Search a Book</h1>
+
+ <form action='/book/search' method='GET'>
+    <input id='title' name='title' type='text' placeholder='Search a title book here...'> 
+    {{!-- <label for='author-input'>{{XXXX}}</label> LINKAR AUTHOR DA API--}}
+    <button type='submit'>Search</button>
+</form>
+<ul>
+    {{#each titleResults }}
+        <li class='book-item'>
+            <a href='book/create'>
+                {{!-- {{> titleResults }} --}}
+            </a>
+        </li>
+        {{this}}
+    {{/each}}
+</ul>
+
