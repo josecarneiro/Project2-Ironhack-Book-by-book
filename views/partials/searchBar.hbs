@@ -1,3 +1,23 @@
+ <form action="list/search" method="GET">
+
+    <label for="title-input">Title</label>
+    <input id='title-input' type="text" name="title">
+
+    <label for="distance-input">Max distance</label>
+    <input id="distance-input" type="number" name="distance">
+
+    <label for='lat-input'></label>
+    <input id='lat-input' type='text' name='lat' >
+
+    <label for='lng-input'></label>
+    <input id='lng-input' type='text' name='lng'>
+
+<button>search</button>
+</form>
+
+{{!-- <script src="./../scripts/userLocation.js"></script> --}}
+<script>
+
 let $lnginput = document.getElementById('lng-input');
 let $latinput = document.getElementById('lat-input');
 
@@ -25,3 +45,5 @@ getPosition(options)
   .catch((error) => {
     console.log(error);
   });
+
+</script>

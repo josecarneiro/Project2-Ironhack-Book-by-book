@@ -13,15 +13,17 @@ const serveFavicon = require('serve-favicon');
 const basicAuthenticationDeserializer = require('./middleware/basic-authentication-deserializer.js');
 const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js');
 const indexRouter = require('./routes/index');
-const addbookRouter = require('./routes/addbook');
+const bookList = require('./routes/list');
 const authenticationRouter = require('./routes/authentication');
 const bookRouter = require('./routes/books');
 const app = express();
 const uploader = require('./middleware/uploader');
 const profileRouter = require('./routes/profile');
+const hbs = require('hbs');
 
 app.set('views', join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+hbs.registerPartials(join(__dirname, 'views/partials'));
 
 app.use(serveFavicon(join(__dirname, 'public/images', 'favicon.ico')));
 app.use(
@@ -60,6 +62,7 @@ app.use('/profile', profileRouter);
 app.use('/book', bookRouter);
 app.use('/', indexRouter);
 app.use('/authentication', authenticationRouter);
+app.use('/list', bookList);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
