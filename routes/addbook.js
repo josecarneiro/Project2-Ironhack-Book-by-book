@@ -14,16 +14,22 @@ router.post('/bookcreate', (req, res, next) => {
   const bookTitle = req.body.title;
   const booksComment = req.body.comment;
 
-  Book.create({
-    bookTitle,
-    booksComment
-  })
-    .then((book) => {
-      console.log('works');
-      res.render('user/addbook');
-    })
-    .catch((error) => {
-      next(error);
+
+    router.post('/bookcreate', (req, res, next) => {
+      const bookTitle = req.body.title;
+      const booksComment = req.body.comment;
+
+      Book.create({
+        bookTitle,
+        booksComment
+      })
+        .then(book => {
+          res.render('user/addbook');
+        })
+        .catch(error => {
+          next(error);
+        });
+
     });
 });
 
