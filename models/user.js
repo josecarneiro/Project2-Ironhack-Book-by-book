@@ -15,6 +15,15 @@ const schema = new mongoose.Schema({
   },
   passwordHash: {
     type: String
+  },
+  avatar: {
+    type: String,
+    default:
+      'https://res.cloudinary.com/dzf57hnmi/image/upload/v1589323455/Lab%20File%20Upload/vkieav0emdln4jpjdy7y.jpg'
+  },
+
+  about: {
+    type: String
   }
 });
 

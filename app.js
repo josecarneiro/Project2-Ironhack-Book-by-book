@@ -17,6 +17,8 @@ const addbookRouter = require('./routes/addbook');
 const authenticationRouter = require('./routes/authentication');
 const bookRouter = require('./routes/books');
 const app = express();
+const uploader = require('./middleware/uploader');
+const profileRouter = require('./routes/profile');
 
 app.set('views', join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -54,10 +56,10 @@ app.use(
 );
 app.use(basicAuthenticationDeserializer);
 app.use(bindUserToViewLocals);
+app.use('/profile', profileRouter);
 app.use('/book', bookRouter);
 app.use('/', indexRouter);
 app.use('/authentication', authenticationRouter);
-
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {

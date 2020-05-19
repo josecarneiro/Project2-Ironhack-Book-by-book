@@ -4,11 +4,12 @@ const { Router } = require('express');
 
 const bcryptjs = require('bcryptjs');
 const User = require('./../models/user');
+const routerguard = require('./../middleware/route-guard');
 
 const router = new Router();
 
 router.get('/sign-up', (req, res, next) => {
-  res.render('sign-up',{
+  res.render('sign-up', {
     style: 'style.css'
   });
 });
@@ -17,24 +18,24 @@ router.post('/sign-up', (req, res, next) => {
   const { name, email, password } = req.body;
   bcryptjs
     .hash(password, 10)
-    .then(hash => {
+    .then((hash) => {
       return User.create({
         name,
         email,
         passwordHash: hash
       });
     })
-    .then(user => {
+    .then((user) => {
       req.session.user = user._id;
       res.redirect('/private');
     })
-    .catch(error => {
+    .catch((error) => {
       next(error);
     });
 });
 
 router.get('/sign-in', (req, res, next) => {
-  res.render('sign-in',{
+  res.render('sign-in', {
     style: 'style.css'
   });
 });
@@ -43,7 +44,7 @@ router.post('/sign-in', (req, res, next) => {
   let user;
   const { email, password } = req.body;
   User.findOne({ email })
-    .then(document => {
+    .then((document) => {
       if (!document) {
         return Promise.reject(new Error("There's no user with that email."));
       } else {
@@ -51,7 +52,7 @@ router.post('/sign-in', (req, res, next) => {
         return bcryptjs.compare(password, user.passwordHash);
       }
     })
-    .then(result => {
+    .then((result) => {
       if (result) {
         req.session.user = user._id;
         res.redirect('/private');
@@ -59,12 +60,12 @@ router.post('/sign-in', (req, res, next) => {
         return Promise.reject(new Error('Wrong password.'));
       }
     })
-    .catch(error => {
+    .catch((error) => {
       next(error);
     });
 });
 
-router.post('/sign-out', (req, res, next) => {
+router.post('/sign-out', routerguard, (req, res, next) => {
   req.session.destroy();
   res.redirect('/');
 });
