@@ -1,49 +1,20 @@
- <form action="list/search" method="GET">
+<div id='navbar-search'>
+   <form action="/list/search" method="GET">
 
     <label for="title-input">Title</label>
-    <input id='title-input' type="text" name="title">
+    <input id='title-input' type="search" name="title">
 
     <label for="distance-input">Max distance</label>
     <input id="distance-input" type="number" name="distance">
 
     <label for='lat-input'></label>
-    <input id='lat-input' type='hidden' name='lat' >
+    <input id='user-lat-input' type='hidden' name='lat' >
 
     <label for='lng-input'></label>
-    <input id='lng-input' type='hidden' name='lng'>
+    <input id='user-lng-input' type='hidden' name='lng'>
 
 <button>search</button>
 </form>
+</div>
 
-{{!-- <script src="./../scripts/userLocation.js"></script> --}}
-<script>
-
-let $lnginput = document.getElementById('lng-input');
-let $latinput = document.getElementById('lat-input');
-
-let options = {
-  enableHighAccuracy: true,
-  timeout: 15000, // max time to wait geo
-  maximumAge: 0
-};
-const getPosition = function(options) {
-  return new Promise(function(resolve, reject) {
-    navigator.geolocation.getCurrentPosition(resolve, reject, options);
-  });
-};
-
-getPosition(options)
-  .then((position) => {
-    const pos = {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude
-    };
-
-    $latinput.value = pos.lat;
-    $lnginput.value = pos.lng;
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-
-</script>
+<script src="./../scripts/userLocation.js"></script>

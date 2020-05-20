@@ -14,12 +14,15 @@
       <a href="/">Icon</a>
       
       {{!-- search bar --}}
-      <div id='navbar-search'
-      {{>searchBar}}
+      <div id='navbar-search'>
+        
+      </div>
+      
   
 
 {{!-- links --}}
       {{#if user}}
+
       <a href='/book/search'>Add Book</a>
       <a href="/list">Find a Book</a>
       <a href="/profile/{{user._id}}">{{user.name}}'s Profile</a>
@@ -31,6 +34,7 @@
       {{/if}}
     </nav>
     {{{body}}}
+    
     <script src="/scripts/script.js"></script>
   </body>
 </html>
