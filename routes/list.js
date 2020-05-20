@@ -4,8 +4,11 @@ const Book = require('../models/book');
 const routerguard = require('../middleware/route-guard');
 
 router.get('/', (req, res, next) => {
-  Book.find(); // maybe  add sort
-  res.render('book/list');
+  Book.find()
+    .then((books) => {
+      res.render('book/list', { books });
+    })
+    .catch((error) => next(error)); // maybe  add sort
 });
 
 router.get('/search', (req, res, next) => {
@@ -29,9 +32,10 @@ router.get('/search', (req, res, next) => {
   // res.render('book/list', { books });
 });
 
-router.get('/book/:id', (req, res, next) => {
+router.get('/:id', (req, res, next) => {
   const id = req.params.id;
   Book.findById(id)
+    .populate('userCreator')
     .then((result) => {
       console.log('here', result);
       res.render('book/singleBook', { result });
