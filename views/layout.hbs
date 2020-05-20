@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>{{title}}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/styles/{{style}}" />
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
+
     <nav>
-     
+      <a href="/">Icon</a>
       <a href="/list">Find a Book</a>
       {{#if user}}
-      <a href="/">My books</a> 
+      <a href="/user/books">My books</a> 
         <a href="/profile/{{user._id}}">{{user.name}}'s Profile</a>
         <form action="/authentication/sign-out" method="POST">
           <button>Log out</button>
         </form>
         {{else}}
-        <a href="/authentication/sign-up">Sign Up</a>
-        <a href="/authentication/sign-in">Sign in</a>
+        {{!-- <a href="/authentication/sign-up">Sign Up</a>
+        <a href="/authentication/sign-in">Sign in</a> --}}
       {{/if}}
     </nav>
     {{{body}}}
