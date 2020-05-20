@@ -18,24 +18,23 @@ router.get('/search', (req, res, next) => {
   const distance = req.query.distance;
   const kilometersToDegrees = (value) => value / (20000 / 360);
   console.log(title, latitude, longitude, distance);
-  Book.find()
+  Book.find({ bookTitle: title })
     .where('location')
     .within()
     .circle({ center: [longitude, latitude], radius: kilometersToDegrees(distance) })
     .then((books) => {
+      console.log(books);
       res.render('book/list', { books });
     })
     .catch((error) => {
       next(error);
     });
-
-  // res.render('book/list', { books });
 });
 
 router.get('/:id', (req, res, next) => {
   const id = req.params.id;
   Book.findById(id)
-  .populate('userCreator')
+    .populate('userCreator')
     .then((result) => {
       console.log('here', result);
       res.render('book/singleBook', { result });

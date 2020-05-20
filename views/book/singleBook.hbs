@@ -11,10 +11,10 @@
 <form action="post">
 
   <label for="lat-input"></label>
-  <input type="hidden" name="location" id="lat-input" placeholder="location" value="{{result.location.coordinates.[1]}}"> 
+  <input type="hidden" name="location" id="latitude-input" placeholder="location" value="{{result.location.coordinates.[1]}}"> 
 
   <label for="lng-input"></label>
-  <input type="hidden" name="location" id="lng-input" placeholder="location" value="{{result.location.coordinates.[0]}}"> 
+  <input type="hidden" name="location" id="longitude-input" placeholder="location" value="{{result.location.coordinates.[0]}}"> 
 
 
 
@@ -22,6 +22,6 @@
 
 <div id="map-view" style="width: 100%; height: 50em">
 </div>
-  <script src="/scripts/userLocation.js"></script>
+
   <script src="/scripts/mapsView.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvNd635sKmUOsRjS--aKxAHfNu9bwD7QU&callback=initMap"></script>
