@@ -3,11 +3,12 @@
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
-  nameCreator: { 
-    type: String,
-    trim: true
+  nameCreator: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'User'
   },
-  content:{ 
+  content: {
     type: String
   },
   post: {

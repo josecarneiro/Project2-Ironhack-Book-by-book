@@ -96,6 +96,7 @@ router.post('/create', (req, res, next) => {
   Book.create({
     bookTitle,
     booksComment,
+    userCreator: req.user._id,
     location: {
       coordinates: [longitude, latitude]
     }

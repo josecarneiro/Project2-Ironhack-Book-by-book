@@ -11,9 +11,10 @@ const bookschema = new mongoose.Schema({
   booksComment: {
     type: String
   },
-  idChannel: {
-    //linkar o nome do channel
-    type: String
+  userCreator: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'User'
   },
   location: {
     type: {

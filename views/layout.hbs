@@ -12,8 +12,8 @@
      
       <a href="/list">Find a Book</a>
       {{#if user}}
-      <a href="/">My books</a> 
-        <a href="/profile/{{user._id}}">{{user.name}}'s Profile</a>
+       <a href="/profile/{{user._id}}">{{user.name}}'s Profile</a>
+        <a href="/profile/{{user._id}}/books">My book</a>
         <form action="/authentication/sign-out" method="POST">
           <button>Log out</button>
         </form>
