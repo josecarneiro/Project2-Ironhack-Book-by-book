@@ -64,7 +64,8 @@ router.get('/create/:id', (req, res) => {
         subtitle: result.data.items[0].volumeInfo.subtitle,
         authors: result.data.items[0].volumeInfo.authors,
         id: result.data.items[0].id,
-        description: result.data.items[0].volumeInfo.description
+        description: result.data.items[0].volumeInfo.description,
+        smallThumbnail: result.data.items[0].volumeInfo.imageLinks.smallThumbnail
       };
       console.log(singleBook);
       res.render('user/addbook', { singleBook });
@@ -77,17 +78,22 @@ router.get('/create/:id', (req, res) => {
 });
 
 router.post('/create', (req, res, next) => {
-  const bookTitle = req.body.title;
-  const bookAuthor = req.body.author;
-  const booksComment = req.body.comment;
-  const latitude = req.body.lat;
-  const longitude = req.body.lng;
+  const bookTitle = req.body.bookTitle;
+  const author = req.body.author;
+  const bookComment = req.body.bookComment;
+  const thumb = req.body.thumb;
+  const latitude = req.body.latitude;
+  const longitude = req.body.longitude;
+  const description = req.body.description;
   console.log(longitude);
   console.log(latitude);
 
   Book.create({
     bookTitle,
-    booksComment,
+    bookComment,
+    author,
+    thumb,
+    description,
     userCreator: req.user._id,
     location: {
       coordinates: [longitude, latitude]

@@ -8,7 +8,7 @@ const bookschema = new mongoose.Schema({
   author: {
     type: String
   },
-  booksComment: {
+  bookComment: {
     type: String
   },
   userCreator: {
@@ -24,11 +24,14 @@ const bookschema = new mongoose.Schema({
     coordinates: [{ type: Number, min: -180, max: 180 }]
     // linkar path aqui
   },
-
-  pictureUrl: {
-    type: String,
-    default:
-      'https://res.cloudinary.com/dzf57hnmi/image/upload/v1589323455/Lab%20File%20Upload/vkieav0emdln4jpjdy7y.jpg'
+  thumb: {
+    type: String
+  },
+  picture: {
+    type: String
+  },
+  description: {
+    type: String
   }
 });
 bookschema.index({ location: '2dsphere' });
