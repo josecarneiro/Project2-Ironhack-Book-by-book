@@ -1,15 +1,19 @@
-<h1>Add a Book</h1>
+<h1>{{singleBook}}</h1>
 
 <form action='/book/create' method='POST'>
-  {{!-- {{> ITEM }}
-  <div class='book-details'>
-    <h3>Book: {{ ID }}</h3>
-    <h3>Author: {{ AUTHOR }}</h3>
-     --}}
+
   </div>
-    {{!-- <input id='title-input' name='title' type='text' placeholder='Search a title book here...'>  --}}
-    {{!-- <label for='author-input'>{{XXXX}}</label> LINKAR AUTHOR DA API--}}
-    
+  
+    <label for="title-input">Book Name</label>
+    <input id='title-input' name='title' type='text' value="{{singleBook.title}}"> 
+
+    <label for="author-input">Book Author</label>
+    <input id='author-input' name='author' type='text' value="{{singleBook.author}}"> 
+
+    <label for="description-input"> description</label>
+    <input id='description-input' name='description' type='text' value="{{singleBook.description}}"> 
+
+    <label for="comment-input"> comment</label>
     <input id='comment-input' name='comment' type='text' placeholder='Insert your comment about the book...'> 
 
     <label for='lat-input'></label>
