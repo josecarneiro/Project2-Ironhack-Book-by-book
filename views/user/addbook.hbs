@@ -1,4 +1,6 @@
-<h1>{{singleBook}}</h1>
+Create a new book
+
+
 
 <form action='/book/create' method='POST'>
 
@@ -16,6 +18,8 @@
     <label for="comment-input"> comment</label>
     <input id='comment-input' name='comment' type='text' placeholder='Insert your comment about the book...'> 
 
+      <input type='file' name='picture' id='picture-input' accept='image/png, image/jpeg' >
+
     <label for='lat-input'></label>
     <input type='hidden' name='lat' id='lat-input'>
     <label for='lng-input'></label>
@@ -25,7 +29,7 @@
     <button type='submit'>Submit book</button>
 </form>
 
-<div id='map-view'>
+<div id="map-view" style="width: 100%; height: 50em">
 </div>
 
   <script src='/scripts/mapsCreate.js'></script>
