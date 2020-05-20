@@ -78,15 +78,7 @@ router.get('/create/:id', (req, res) => {
 });
 
 router.post('/create', (req, res, next) => {
-  const bookTitle = req.body.bookTitle;
-  const author = req.body.author;
-  const bookComment = req.body.bookComment;
-  const thumb = req.body.thumb;
-  const latitude = req.body.latitude;
-  const longitude = req.body.longitude;
-  const description = req.body.description;
-  console.log(longitude);
-  console.log(latitude);
+  const { bookTitle, author, bookComment, thumb, latitude, longitude, description } = req.body;
 
   Book.create({
     bookTitle,
