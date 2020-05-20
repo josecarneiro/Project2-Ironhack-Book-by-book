@@ -9,14 +9,14 @@ $grey: hsla(0, 0, 75%, 0.5);
   }
 }
 
-body {
-  max-width: 52em;
-  padding: 0 1em;
-  margin: 0 auto;
-  font-family: sans-serif;
-  font-family: $font-sans;
-  line-height: 2;
-}
+// body {
+//   max-width: 52em;
+//   padding: 0 1em;
+//   margin: 0 auto;
+//   font-family: sans-serif;
+//   font-family: $font-sans;
+//   line-height: 2;
+// }
 
 a {
   color: inherit;
@@ -90,3 +90,76 @@ textarea {
 #profile-picture img {
   width: 1em;
 }
+
+// HOME PAGE
+#boxHomePage {
+  width:700px;
+  height:400px;
+  background: white;
+  opacity: 0.6;
+  margin-left: 200px;
+  margin-top: 250px;
+  display: flex;
+  flex-direction: column;
+}
+#boxHomePage button{
+  margin: 30px 20px 0px 20px;
+  background-color: #772e25ff;
+  color: white;
+  opacity: 1;
+}
+#boxHomePage p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+#input-email{
+  margin: 30px 20px 0px 20px;
+}
+#input-password{
+  margin: 20px 20px 10px 20px;
+}
+#containerHomeView {
+  background-image: url('/images/homepage.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  height: 1080px;
+  display: flex;
+  flex-direction: row;
+}
+#titleHomeView h1{
+  color: white;
+  margin-left: 60px;
+  padding-top: 250px;
+  font-size: 70px;
+  text-shadow: -2px 2px #cdd2d5, 2px 2px 0px black;
+}
+#titleHomeView p{
+  color: white;
+  font-size: 30px;
+  margin-left: 55px;
+  padding-top: 15px;
+  text-shadow: -2px 0px #000000;
+  display: flex;
+  flex-direction: row;
+}
+
+// nav{
+//   display: flex;
+//   justify-content: flex-end;
+//   background-color: rgb(248, 248, 248);
+//   padding: 1em;
+// }
+// nav a{
+//   display: flex;
+//   padding: 5px;
+//   text-decoration: none;
+//   color: black;
+// }
+// .container{
+//   display: flex;
+//   justify-content: space-between;
+
+// }
+

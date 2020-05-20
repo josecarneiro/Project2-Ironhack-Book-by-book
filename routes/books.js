@@ -11,16 +11,12 @@ const apiKey = process.env.BOOK_API_KEY;
 
 router.get('/test', (req, res, next) => {
   // /:id
-  res.render('book/singleBook', {
-    style: 'style.css'
-  });
+  res.render('book/singleBook');
 });
 
 router.get('/test/create', (req, res, next) => {
   // /:id
-  res.render('book/AddBookLogic', {
-    style: 'style.css'
-  });
+  res.render('book/AddBookLogic');
 });
 
 router.get('/search', (req, res) => {
@@ -79,9 +75,7 @@ router.get('/create/:id', (req, res) => {
       res.send('There was an error processing your request.');
     });
 
-  res.render('user/addbook', {
-    style: 'style.css'
-  });
+  res.render('user/addbook');
 });
 
 router.post('/create', (req, res, next) => {
