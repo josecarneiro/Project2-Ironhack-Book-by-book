@@ -8,7 +8,7 @@ function initMap() {
   const $lnginput = document.getElementById('lng-input').value;
   const lat = Number($latinput);
   const lng = Number($lnginput);
-  console.log(lng, lat);
+
   const bookPosition = { lat: lat, lng: lng };
 
   const map = new google.maps.Map(document.getElementById('map-view'), {
@@ -19,6 +19,7 @@ function initMap() {
   const marker = new google.maps.Marker({
     draggable: false,
     position: bookPosition,
-    map: map
+    map: map,
+    animation: google.maps.Animation.DROP
   });
 }
