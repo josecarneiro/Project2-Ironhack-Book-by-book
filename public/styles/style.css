@@ -1,6 +1,12 @@
 *, *:before, *:after {
   box-sizing: border-box; }
 
+.style-body-pages {
+  max-width: 52em;
+  padding: 0 1em;
+  margin: 0 auto;
+  line-height: 2; }
+
 a {
   color: inherit;
   text-decoration: none; }
@@ -63,29 +69,28 @@ textarea {
   flex-direction: column; }
 
 #profile-picture img {
-  width: 1em; }
+  width: 1em;
+  border: solid; }
 
 #boxHomePage {
-  width: 700px;
-  height: 400px;
+  width: 690px;
+  height: 350px;
   background: white;
-  opacity: 0.6;
+  opacity: 0.8;
   margin-left: 200px;
   margin-top: 250px;
   display: flex;
   flex-direction: column; }
-
-#boxHomePage button {
-  margin: 30px 20px 0px 20px;
-  background-color: #772e25ff;
-  color: white;
-  opacity: 1; }
+  #boxHomePage button {
+    margin: 25px 20px;
+    background-color: #772e25ff;
+    color: white;
+    padding: 17px 300px; }
 
 #boxHomePage p {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-top: 10px; }
+  justify-content: center; }
 
 #input-email {
   margin: 30px 20px 0px 20px; }
