@@ -1,22 +1,14 @@
 <h2>{{user.name}}</h2>
 <div id="profile-container">
-
   <h3>{{user.email}}</h3>
   <p>{{user.about}}</p>
-
- 
   <img id="profile-picture" src="{{user.avatar}}" alt="" srcset="">
- 
-
-
    {{#if owner}} 
-   <button><a href="/book/search"> + add a new book </a></button>
+   <button>
+     <a href="/book/search"> + add a new book </a>
+  </button>
   <a href="/profile/{{user._id}}/edit"><button>Edit</button></a> 
   {{/if}}  
-  
- 
-
-  
 </div>
 
 
