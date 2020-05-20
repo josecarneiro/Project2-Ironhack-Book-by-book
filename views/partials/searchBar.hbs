@@ -1,11 +1,9 @@
+
 <div id='navbar-search'>
-   <form action="/list/search" method="GET">
+ <form action="list/search" method="GET">
+    <input id='title-input' for="title-input" type="text" name="title" placeholder='Search a book by Title...'>
+    <input id="distance-input" for="distance-input" type="number" name="distance" placeholder='Search by distance'>
 
-    <label for="title-input">Title</label>
-    <input id='title-input' type="search" name="title">
-
-    <label for="distance-input">Max distance</label>
-    <input id="distance-input" type="number" name="distance">
 
     <label for='lat-input'></label>
     <input id='user-lat-input' type='hidden' name='lat' >
