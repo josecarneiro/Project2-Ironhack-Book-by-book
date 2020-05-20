@@ -13,7 +13,6 @@ const serveFavicon = require('serve-favicon');
 const basicAuthenticationDeserializer = require('./middleware/basic-authentication-deserializer.js');
 const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js');
 const indexRouter = require('./routes/index');
-const addbookRouter = require('./routes/addbook');
 const authenticationRouter = require('./routes/authentication');
 const bookRouter = require('./routes/books');
 const app = express();
@@ -72,7 +71,7 @@ app.use((error, req, res, next) => {
   res.locals.message = error.message;
   res.locals.error = req.app.get('env') === 'development' ? error : {};
   res.status(error.status || 500);
-  res.render('error');
+  res.render('error', next);
 });
 
 module.exports = app;
