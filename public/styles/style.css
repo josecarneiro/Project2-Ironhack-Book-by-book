@@ -12,29 +12,36 @@ a {
   text-decoration: none; }
 
 nav {
-  display: flex; }
-  nav a,
-  nav button {
-    padding: 1em 0;
-    border: 0; }
-    nav a:not(:last-child),
-    nav button:not(:last-child) {
-      margin-right: 1em; }
-    nav a:first-child,
-    nav button:first-child {
-      margin-right: auto; }
+  display: flex;
+  justify-content: flex-end;
+  background-color: #f8f7f7ff;
+  padding: 1em; }
+  nav a {
+    display: flex;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    margin-left: 7px; }
 
-h1,
-h2,
-h3,
-p {
-  margin: 0;
-  line-height: inherit; }
-  h1:not(:last-child),
-  h2:not(:last-child),
-  h3:not(:last-child),
-  p:not(:last-child) {
-    margin-bottom: 1rem; }
+#navbar-search {
+  margin: auto; }
+  #navbar-search form {
+    display: flex;
+    flex-direction: row; }
+  #navbar-search input {
+    background-color: white;
+    color: black;
+    width: 300px;
+    height: 30px; }
+  #navbar-search button {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px; }
 
 img {
   width: 100%;
@@ -44,18 +51,6 @@ form {
   display: flex;
   flex-direction: column; }
 
-input,
-textarea,
-button,
-.btn {
-  padding: 1em;
-  border: 1px solid rgba(191, 191, 191, 0.5);
-  border-radius: 0;
-  margin-bottom: 1em;
-  font: inherit;
-  color: inherit;
-  background-color: transparent; }
-
 textarea {
   min-height: 8em;
   resize: vertical; }
@@ -64,19 +59,10 @@ textarea {
   width: 50%;
   height: 15em; }
 
-#profile-container {
-  display: flex;
-  flex-direction: column; }
-
-#profile-picture img {
-  width: 1em;
-  border: solid; }
-
 #boxHomePage {
   width: 690px;
   height: 350px;
-  background: white;
-  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.6);
   margin-left: 200px;
   margin-top: 250px;
   display: flex;
@@ -86,17 +72,20 @@ textarea {
     background-color: #772e25ff;
     color: white;
     padding: 17px 300px; }
-
-#boxHomePage p {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+  #boxHomePage p {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  #boxHomePage a {
+    color: #c44536ff; }
 
 #input-email {
-  margin: 30px 20px 0px 20px; }
+  margin: 30px 20px 0px 20px;
+  background-color: white; }
 
 #input-password {
-  margin: 20px 20px 10px 20px; }
+  margin: 20px 20px 10px 20px;
+  background-color: white; }
 
 #containerHomeView {
   background-image: url("/images/homepage.jpg");
@@ -106,7 +95,8 @@ textarea {
   display: flex;
   flex-direction: row; }
 
-#titleHomeView h1 {
+#titleHomeView
+h1 {
   color: white;
   margin-left: 60px;
   padding-top: 250px;

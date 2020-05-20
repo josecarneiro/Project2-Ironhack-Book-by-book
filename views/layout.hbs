@@ -10,42 +10,24 @@
   <body>
 
     <nav>
-      {{!-- icone --}}
-      <a href="/">Icon</a>
-      
+      {{!-- icon --}}
+      <div class='icon'></div>
       {{!-- search bar --}}
-      <div id='navbar-search'
-      {{>searchBar}}
-        <ul>
-          {{#each books}}
-            <div>
-              <img src="{{picture}}" alt="{{title}}">
-            </div>
-            <div>
-              <a href="list/{{_id}}">
-                <h3>{{bookTitle}}</h3>
-                <h4>{{bookAuthor}}</h4>
-                <p>{{booksComment}}</p>
-              </a><h6>
-              <a href="/profile/{{userCreator}}"> {{userCreator.name}} Profile</a></h6><h6>
-              <a href="/profile/{{userCreator}}/books">Other books from this user</a></h6>
-            </div>
-          {{/each}}
-        </ul>
-      </div>
-
-{{!-- links --}}
       {{#if user}}
+      <div id='navbar-search'>
+      {{>searchBar}}
+      </div>
+      {{!-- links --}}
+      <a href="/list">Home</a>
       <a href='/book/search'>Add Book</a>
-      <a href="/list">Find a Book</a>
+      <a href="/profile/{{user._id}}/books">My books</a>
       <a href="/profile/{{user._id}}">{{user.name}}'s Profile</a>
-      <a href="/profile/{{user._id}}/books">My book</a>
       <form action="/authentication/sign-out" method="POST">
-          <button>Log out</button>
-        </form>
-        {{else}}
+        <a href="/">Log out</a>
+      </form>
       {{/if}}
     </nav>
+
     {{{body}}}
     <script src="/scripts/script.js"></script>
   </body>
