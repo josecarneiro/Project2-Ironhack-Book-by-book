@@ -9,11 +9,12 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/search', (req, res, next) => {
+  const title = req.query.title;
   const latitude = req.query.lat;
   const longitude = req.query.lng;
   const distance = req.query.distance;
   const kilometersToDegrees = (value) => value / (20000 / 360);
-  console.log(latitude, longitude, distance);
+  console.log(title, latitude, longitude, distance);
   Book.find()
     .where('location')
     .within()
@@ -25,7 +26,19 @@ router.get('/search', (req, res, next) => {
       next(error);
     });
 
-  res.send(req.query);
+  // res.render('book/list', { books });
+});
+
+router.get('/book/:id', (req, res, next) => {
+  const id = req.params.id;
+  Book.findById(id)
+    .then((result) => {
+      console.log('here', result);
+      res.render('book/singleBook', { result });
+    })
+    .catch((error) => {
+      next(error);
+    });
 });
 
 module.exports = router;

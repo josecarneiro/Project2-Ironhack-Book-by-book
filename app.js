@@ -16,7 +16,6 @@ const indexRouter = require('./routes/index');
 
 const bookList = require('./routes/list');
 
-
 const authenticationRouter = require('./routes/authentication');
 const bookRouter = require('./routes/books');
 const app = express();

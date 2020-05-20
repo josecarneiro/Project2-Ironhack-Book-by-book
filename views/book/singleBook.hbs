@@ -2,22 +2,21 @@
 <h1>single book view</h1>
 
 <div>
-  <h2>Book Title {{title}}</h2>
-<h4>Book author {{author}}</h4>
+<h2>Book Title  {{result.booktitle}}</h2>
+<h4>Book author {{result.bookauthor}}</h4>
 <p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-  Quos soluta velit harum fuga molestiae culpa cupiditate pariatur. 
-  Earum, ad ratione. Harum facilis enim explicabo deleniti 
-  quia tempore cumque sit consequuntur.
-  </p></div>
+{{result.comment}}
+  </p>
+  
+</div>
 
 <form action="post">
 
   <label for="lat-input"></label>
-  <input type="hidden" name="location" id="lat-input" placeholder="location" value="-9"> 
+  <input type="hidden" name="location" id="lat-input" placeholder="location" value="{{location.coordinates[1]}}"> 
   {{!-- // linkar path aqui "{{location.[1]}}" --}}
   <label for="lng-input"></label>
-  <input type="hidden" name="location" id="lng-input" placeholder="location" value="-39"> 
+  <input type="hidden" name="location" id="lng-input" placeholder="location" value="{{location.coordinates[0]}}"> 
   {{!-- // linkar path aqui "{{location.[1]}}" --}}
 
 

@@ -1,14 +1,6 @@
 <h1>Search a Book</h1>
 
- <form action='/book/searchBookView' method='GET'>
-    <input id='title' name='title-search' type='search' placeholder='Search a title book...'> 
+ <form action='/book/result' method='GET'>
+    <input id='title' name='title' type='search' placeholder='Search a title book...'> 
     <button type="submit">Search</button>
 </form>
-{{!-- <ul>
-    {{#each titleResults}}
-        <li class='book-item'>
-        {{this}}
-        {{authorResults}}
-        </li>
-    {{/each}}
-</ul> --}}
