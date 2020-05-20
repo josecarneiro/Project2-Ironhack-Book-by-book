@@ -9,9 +9,7 @@ const routerguard = require('./../middleware/route-guard');
 const router = new Router();
 
 router.get('/sign-up', (req, res, next) => {
-  res.render('sign-up', {
-    style: 'style.css'
-  });
+  res.render('sign-up');
 });
 
 router.post('/sign-up', (req, res, next) => {
@@ -35,9 +33,7 @@ router.post('/sign-up', (req, res, next) => {
 });
 
 router.get('/sign-in', (req, res, next) => {
-  res.render('sign-in', {
-    style: 'style.css'
-  });
+  res.render('sign-in');
 });
 
 router.post('/sign-in', (req, res, next) => {
