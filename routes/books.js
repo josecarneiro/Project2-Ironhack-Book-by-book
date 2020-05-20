@@ -25,7 +25,7 @@ router.get('/search', (req, res) => {
 
 router.get('/result', (req, res, next) => {
   const title = req.query.title;
-  const maxResults = 1;
+  const maxResults = 5;
   axios
     .get(
       `https://www.googleapis.com/books/v1/volumes?q=${title}&startIndex=0&maxResults=${maxResults}`
@@ -74,8 +74,6 @@ router.get('/create/:id', (req, res) => {
       console.log(error);
       res.send('There was an error processing your request.');
     });
-
-  res.render('user/addbook');
 });
 
 router.post('/create', (req, res, next) => {
@@ -97,7 +95,7 @@ router.post('/create', (req, res, next) => {
   })
     .then((book) => {
       console.log(book);
-      res.render('user/addbook');
+      res.redirect(`/book/${book._id}`);
     })
     .catch((error) => {
       next(error);
@@ -109,12 +107,14 @@ router.get('/:id', (req, res, next) => {
   Book.findById(id)
     .then((result) => {
       console.log('here', result);
-      res.render('book/singleBook', { result });
+      res.render('book/singlebook', { result });
     })
     .catch((error) => {
+      console.log(error);
       next(error);
     });
 });
+
 module.exports = router;
 
 // router.get('/search', (req, res) => {

@@ -1,30 +1,27 @@
 
-<h1>single book view</h1>
-
+<h1> {{result.bookTitle}}</h1>
+<h4> {{result.author}}</h4>
 <div>
-<h2>Book Title  {{result.booktitle}}</h2>
-<h4>Book author {{result.bookauthor}}</h4>
-<p>
-{{result.comment}}
-  </p>
+
+<p>{{result.descripition}}</p>
+
   
 </div>
 
 <form action="post">
 
   <label for="lat-input"></label>
-  <input type="hidden" name="location" id="lat-input" placeholder="location" value="{{location.coordinates[1]}}"> 
-  {{!-- // linkar path aqui "{{location.[1]}}" --}}
+  <input type="hidden" name="location" id="lat-input" placeholder="location" value="{{result.location.coordinates.[1]}}"> 
+
   <label for="lng-input"></label>
-  <input type="hidden" name="location" id="lng-input" placeholder="location" value="{{location.coordinates[0]}}"> 
-  {{!-- // linkar path aqui "{{location.[1]}}" --}}
+  <input type="hidden" name="location" id="lng-input" placeholder="location" value="{{result.location.coordinates.[0]}}"> 
+
 
 
 </form>
 
-<div id="map-view">
+<div id="map-view" style="width: 100%; height: 50em">
 </div>
   <script src="/scripts/userLocation.js"></script>
   <script src="/scripts/mapsView.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvNd635sKmUOsRjS--aKxAHfNu9bwD7QU&callback=initMap"></script>
- 

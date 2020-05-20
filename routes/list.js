@@ -35,7 +35,7 @@ router.get('/search', (req, res, next) => {
 router.get('/:id', (req, res, next) => {
   const id = req.params.id;
   Book.findById(id)
-    .populate('userCreator')
+  .populate('userCreator')
     .then((result) => {
       console.log('here', result);
       res.render('book/singleBook', { result });
