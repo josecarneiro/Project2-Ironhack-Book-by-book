@@ -24,18 +24,11 @@ router.get('/test/create', (req, res, next) => {
   });
 });
 
-// Display search book page
-// router.get('/search', (req, res, next) => {
-//   res.render('user/searchbook', {
-//   });
-// });
 
 router.get('/search', (req, res) => {
   const title = req.query.title;
   axios
     .get(`https://www.googleapis.com/books/v1/volumes?q=${title}&startIndex=0&maxResults=40`)
-    //    https://www.googleapis.com/books/v1/volumes?q=${title}:keyes&key=${}
-    //   `https://www.googleapis.com/books/v1/volumes?q=${text}&startIndex=0&maxResults=40`
     .then(result => {
       const titleResults = result.data.items.map(books => {
         let infoBook = '';
@@ -46,8 +39,6 @@ router.get('/search', (req, res) => {
         return bookId = `${books.id}`; 
       });
       console.log(idResults);
-      // const authorResults = result.data.items.map(books => books.volumeInfo.authors);
-      // console.log(authorResults);
       res.render('user/searchbook', {
         titleResults 
       });
@@ -58,6 +49,7 @@ router.get('/search', (req, res) => {
       res.send('There was an error processing your request.');
     });
 });
+
 
 // Display create book page
 
