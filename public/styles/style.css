@@ -223,7 +223,16 @@ textarea {
 
 .container {
   display: flex;
-  flex-direction: column;
-  justify-content: center; }
+  flex-direction: row;
+  justify-content: center;
+  background-color: purple; }
+  .container .book-container {
+    flex-direction: row;
+    background-color: salmon; }
+  .container .map-container {
+    margin-right: auto;
+    flex-direction: row;
+    background-color: royalblue; }
+
 
 /*# sourceMappingURL=style.css.map */
