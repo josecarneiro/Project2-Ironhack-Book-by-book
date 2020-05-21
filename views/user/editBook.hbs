@@ -1,6 +1,6 @@
-Edit your book
+<div class='style-body-pages'>
 
-
+<h1>Edit your book</h1>
 
 <form action='/book/{{result._id}}/edit' method='POST'>
 
@@ -11,11 +11,11 @@ Edit your book
     <label for="author-input">Book Author</label>
     <input id='author-input' name='author' type='text' value="{{result.author}}"> 
 
-    <label for="description-input"> description</label>
+    <label for="description-input">description</label>
     <input id='description-input' name='description' type='text' value="{{result.description}}"> 
 
-    <label for="comment-input"> comment</label>
-    <input id='comment-input' name='bookComment' type='text-area'  value="{{result.bookComment}}" placeholder='Insert your comment about the book...'> 
+    {{!-- <label for="comment-input">comment</label>
+    <input id='comment-input' name='bookComment' type='text-area'  value="{{result.bookComment}}" placeholder='Insert your comment about the book...'>  --}}
 
     <label for="">Images from your book</label>
     <input type='file' name='picture' id='picture-input' accept='image/png, image/jpeg'> 
@@ -41,6 +41,6 @@ Edit your book
 
 <div id="map-view" style="width: 50%; height: 50em"></div>
 
-
+</div>
   <script src='/scripts/mapsCreate.js'></script>
   <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCvNd635sKmUOsRjS--aKxAHfNu9bwD7QU&callback=initMap'></script>
