@@ -222,21 +222,45 @@ textarea {
     font-size: 1em; }
 
 .container {
+  margin-top: 2em;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: purple; }
-  .container .book-container {
-    flex-direction: row; }
-    .container .book-container img {
-      max-width: 10em; }
-  .container .map-container {
-    margin-right: auto;
+  flex-direction: column;
+  justify-content: center; }
+  .container .book-container :first-child {
+    display: flex;
     flex-direction: row;
-    background-color: royalblue; }
+    justify-content: flex-start; }
+    .container .book-container :first-child img {
+      max-width: 7em;
+      margin-right: 1em; }
+  .container .map-container {
+    margin-top: 2em;
+    margin-bottom: 4em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-start; }
+    .container .map-container h3 {
+      margin-bottom: 0;
+      padding: 0; }
   .container #map-view {
     width: 50%;
-    height: 15em; }
+    height: 20em;
+    margin-left: 0em; }
+  .container button {
+    color: white;
+    background-color: #c44536;
+    margin-top: 1em;
+    border-color: #c44536;
+    border-style: solid;
+    font-size: 1em; }
+    .container button a {
+      text-decoration: none;
+      margin: 1em; }
+
+.user-books {
+  margin-top: em; }
 
 .container-profile {
   display: flex;

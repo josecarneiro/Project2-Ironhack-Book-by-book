@@ -1,23 +1,51 @@
 
 <div class="style-body-pages">
-<div class="container">
-  <div class="book-container">        
-    <h1> {{result.bookTitle}}</h1>
-    <h4>{{result.author}}</h4>
-    <div>
-    <p>{{result.bookComment}}</p>
-    <p>{{result.description}}</p>
-  </div>
-  <div class="map-container">
-    <span>
-      <label for="lat-input"></label>
-      <input type="hidden" name="location" id="latitude-input" placeholder="location" value="{{result.location.coordinates.[1]}}"> 
-      <label for="lng-input"></label>
-      <input type="hidden" name="location" id="longitude-input" placeholder="location" value="{{result.location.coordinates.[0]}}"> 
-    </span>
+
+    <div class="container">
+      <div class="book-container">
+        <div>
+            <img src="{{ result.thumb  }}" alt="">
+            <div>
+              <h1> {{result.bookTitle}}</h1>
+              <h4>{{result.author}}</h4>
+            </div>
+        </div>
+        <div>           
+          <p>{{result.bookComment}}</p>
+          <p>{{result.description}}</p>
+           <button><a href="/profile/{{result.userCreator}}"><h6>Chat with the owner</h6></a></button>
+        </div>
+      </div>  
+
+      <div class="map-container">
+        <h3>Where</h3>
+        <span>
+          <label for="lat-input"></label>
+          <input type="hidden" name="location" id="latitude-input" placeholder="location" value="{{result.location.coordinates.[1]}}"> 
+          <label for="lng-input"></label>
+          <input type="hidden" name="location" id="longitude-input" placeholder="location" value="{{result.location.coordinates.[0]}}"> 
+        </span>
       <div id="map-view"></div>
-  </div>
+      </div>  
+
   </div>
 </div>
+ 
+   
+   
+   
+   
+   
+   
+   
+   
+
+
+
+
+
   <script src="/scripts/mapsView.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvNd635sKmUOsRjS--aKxAHfNu9bwD7QU&callback=initMap"></script>
+
+
+  

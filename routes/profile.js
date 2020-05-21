@@ -16,11 +16,11 @@ router.get('/:id', (req, res, next) => {
   console.log(id);
 
   User.findById(id)
-    .then((user) => {
-      console.log(user);
+    .then((userProfile) => {
+      console.log(userProfile);
       let owner = id.toString() === cookiesId.toString() ? true : false;
       console.log(owner);
-      res.render('user/profile', { user, owner });
+      res.render('user/profile', { userProfile  , owner });
     })
     .catch((error) => next(error));
 });
