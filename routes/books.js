@@ -109,7 +109,7 @@ router.get('/:id', (req, res, next) => {
   Book.findById(id)
     .then((result) => {  
       //res.json({messageFromAline: "Santi is the best"});
-      res.render('book/singlebook',{result});
+      res.render('book/singleBook');
     })
     .catch((error) => {
       console.log(error);
