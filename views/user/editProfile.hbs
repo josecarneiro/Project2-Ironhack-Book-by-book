@@ -1,17 +1,14 @@
 <div class='style-body-pages'>
-<h1>Edit Profile</h1>
+  <h1>Edit Profile</h1>
 
-
-<form action="" method="POST">
-  <label for="input-name">Name</label>
-  <input type="text" id="input-name" name="name" placeholder="Your Name" value="{{user.name}}" />
-
-  <label for="input-about">about</label>
-  <input type="text-area" name="about" id="input-about" placeholder="About you" value="{{user.about}}"/>
-
-
-  
-  <button>Update</button>
-
-</form>
+  <div class='container-profile-edit'>
+    <form action="" method="POST">
+      <br><label for="input-name">Name</label>
+      <input type="text" id="input-name" name="name" placeholder="Your Name" value="{{user.name}}" />
+      <br>
+      <label for="input-about">About</label>
+      <input type="text-area" name="about" id="input-about" placeholder="About you" value="{{user.about}}"/>
+      <button>Update</button>
+    </form>
+  </div>
 </div>

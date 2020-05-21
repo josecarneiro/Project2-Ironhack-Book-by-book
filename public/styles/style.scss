@@ -28,8 +28,9 @@ nav {
 .style-body-pages {
   max-width: 70em;
   padding: 0 1em;
-  margin: 0 auto;
+  margin: 3em auto;
   line-height: 2;
+  
 }
 
 #navbar-search {
@@ -89,8 +90,6 @@ textarea {
 #boxHomePage {
   width: 690px;
   height: 350px;
-  // background: white;
-  // opacity: 0.8;
   background: rgba(255, 255, 255, 0.6);
   margin-left: 200px;
   margin-top: 250px;
@@ -314,5 +313,61 @@ textarea {
   #map-view {
     width: 50%;
     height: 15em;
+  }
+}
+//PROFILE
+.container-profile{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2em;
+  img{
+    max-width: 600px;
+    max-height: 600px;
+    border-radius: 10px;
+    // margin-right: 300px;
+  }
+}
+.container-profile-text{
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  flex-direction: column;
+  margin-top: 2em;
+  max-width: 600px;
+  padding: 10px;
+}
+.container-profile-buttons{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  // margin-right: 300px;
+  margin-top: 2em;
+  button{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+
+  }
+}
+// EDIT IMAGE PROFILE
+.image-profile-edit{
+  max-width: 600px;
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
+}
+.container-profile-edit{
+  display: flex;
+  button{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    width: 5em;
+    margin-top: 2em;
+  };
+  form{
+    width: 800px;
   }
 }
