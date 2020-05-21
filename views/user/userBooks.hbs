@@ -6,5 +6,7 @@
 {{#each books}}
 
   <a href="/book/{{_id}}"><h4>{{this.bookTitle}}</h4></a>
-
+  <a href="/book/{{_id}}/edit">Edit this book</a>
+{{#if owner}}
+ {{/if}}
  {{/each}}

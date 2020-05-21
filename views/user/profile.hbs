@@ -3,8 +3,10 @@
   <h3>{{user.email}}</h3>
   <p>{{user.about}}</p>
   <img id="profile-picture" src="{{user.avatar}}" alt="" srcset="">
+
    {{#if owner}} 
-   <button>
+    
+   <button><a href="/profile/{{user._id}}/edit/avatar"><change>Edit</button></a> 
      <a href="/book/search"> + add a new book </a>
   </button>
   <a href="/profile/{{user._id}}/edit"><button>Edit</button></a> 
