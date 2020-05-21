@@ -18,7 +18,7 @@ const bookList = require('./routes/list');
 
 const authenticationRouter = require('./routes/authentication');
 const bookRouter = require('./routes/books');
-const app = express(); 
+const app = express();
 const uploader = require('./middleware/uploader');
 const profileRouter = require('./routes/profile');
 const hbs = require('hbs');
@@ -49,8 +49,8 @@ app.use(
     cookie: {
       maxAge: 60 * 60 * 24 * 1000,
       sameSite: 'lax',
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production'
+      httpOnly: true
+      // secure: process.env.NODE_ENV === 'production'
     },
     store: new (connectMongo(expressSession))({
       mongooseConnection: mongoose.connection,
