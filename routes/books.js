@@ -103,15 +103,18 @@ router.post('/create', (req, res, next) => {
 });
 
 router.get('/:id', (req, res, next) => {
+  //res.json({message: "Hi Aline"});
+  
   const id = req.params.id;
   Book.findById(id)
-    .then((result) => {
-      res.render('book/singlebook', { result });
+    .then((result) => {  
+      res.render('book/singleBook', { result });
     })
     .catch((error) => {
       console.log(error);
       next(error);
     });
+    
 });
 
 router.get('/:id/edit', (req, res, next) => {
