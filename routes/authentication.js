@@ -1,7 +1,6 @@
 'use strict';
 
 const { Router } = require('express');
-
 const bcryptjs = require('bcryptjs');
 const User = require('./../models/user');
 const routerguard = require('./../middleware/route-guard');
@@ -57,7 +56,7 @@ router.post('/sign-in', (req, res, next) => {
       }
     })
     .catch((error) => {
-      next(error);
+      res.redirect('/');
     });
 });
 

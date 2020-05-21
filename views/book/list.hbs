@@ -1,26 +1,24 @@
-
-{{>searchBar}}
-
-
 <div class='style-body-pages'>
- <ul>
-{{#each books}}
-<div>
-  <img src="{{thumb}}" alt="{{title}}">
-</div>
-<div>
- <a href="book/{{_id}}">
-  <h3>{{bookTitle}}</h3>
-  <h4>{{author}}</h4>
-  <p>{{bookComment}}</p>
- </a>
- <h6><a href="/profile/{{userCreator}}"> {{userCreator.name}} Profile</a></h6>
- <h6><a href="/profile/{{userCreator}}/books">Other books from this user</a></h6>
-  
-</div>
-{{/each}}
-
-</ul>
+  <ul>
+    {{#each books}}
+    <div class='box-homepage-books'>
+      <div>
+        <img src="{{thumb}}" alt="{{title}}">
+      </div>
+      <div>
+        <a href="book/{{_id}}">
+          <h2>{{bookTitle}}</h2>
+          <h4>{{author}}</h4>
+          <p>{{bookComment}}</p>
+        </a>
+        <div class='box-homepage-user'>
+        <h6><a href="/profile/{{userCreator}}"> {{userCreator.name}} Profile</a></h6>
+        <h6><a href="/profile/{{userCreator}}/books">Other books from this user</a></h6>
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </ul>
 </div>  
 
 
