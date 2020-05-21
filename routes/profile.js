@@ -24,7 +24,7 @@ router.get('/:id', (req, res, next) => {
     })
     .catch((error) => next(error));
 });
-// let test = 'teste@teste';
+
 router.get('/:id/edit', routeGuard, (req, res, next) => {
   OwnerGuard(req.user._id);
   res.render('user/editProfile');
