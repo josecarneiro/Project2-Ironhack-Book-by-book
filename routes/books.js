@@ -3,18 +3,16 @@
 const { Router } = require('express');
 const router = new Router();
 const Book = require('../models/book');
-const User = require('./../models/user');
 const axios = require('axios');
 const apiKey = process.env.BOOK_API_KEY;
 const routeGuard = require('./../middleware/route-guard');
 
-// Display Single book page
+// ------------ SINGLE BOOK
 
 // router.get('/test', (req, res, next) => {
 //   /:id
 //   res.render('book/singleBook');
 // });
-
 // router.get('/test/create', (req, res, next) => {
 //   /:id
 //   res.render('book/AddBookLogic');
@@ -51,9 +49,11 @@ router.get('/result', (req, res, next) => {
       console.log('There was an error loading response from api');
       console.log(error);
       res.send('There was an error processing your request.');
+      next(error);
     });
 });
-// Display create book page
+
+// ------------ CREATE BOOK
 
 router.get('/create/:id', (req, res) => {
   const id = req.params.id;
@@ -119,7 +119,7 @@ router.get('/:id/edit', (req, res, next) => {
   const cookiesId = req.user._id;
   Book.findById(id)
   .then((result) => {
-    let owner = id.toString() === cookiesId.toString() ? true : false;
+    const owner = id.toString() === cookiesId.toString() ? true : false;
     console.log(owner);
     res.render('user/editBook', { result });
     })
