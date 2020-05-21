@@ -21,7 +21,7 @@ nav {
 .style-body-pages {
   max-width: 70em;
   padding: 0 1em;
-  margin: 0 auto;
+  margin: 3em auto;
   line-height: 2; }
 
 #navbar-search {
@@ -259,7 +259,53 @@ textarea {
       text-decoration: none;
       margin: 1em; }
 
-.user-books {
-  margin-top: em; }
+
+.container-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2em; }
+  .container-profile img {
+    max-width: 600px;
+    max-height: 600px;
+    border-radius: 10px; }
+
+.container-profile-text {
+  display: flex;
+  align-items: flex-start;
+  justify-content: left;
+  flex-direction: column;
+  margin-top: 2em;
+  max-width: 600px;
+  padding: 10px; }
+
+.container-profile-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-top: 2em; }
+  .container-profile-buttons button {
+    background-color: black;
+    color: white;
+    border-radius: 5px; }
+
+.image-profile-edit {
+  max-width: 600px;
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+  margin-top: 3em; }
+
+.container-profile-edit {
+  display: flex; }
+  .container-profile-edit button {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    width: 5em;
+    margin-top: 2em; }
+  .container-profile-edit form {
+    width: 800px; }
+
 
 /*# sourceMappingURL=style.css.map */

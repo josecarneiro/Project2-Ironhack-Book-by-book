@@ -1,16 +1,26 @@
 <div class='style-body-pages'>
-<h2>{{user.name}}</h2>
-<div id="profile-container">
-  <h3>{{user.email}}</h3>
-  <p>{{user.about}}</p>
-  <img id="profile-picture" src="{{user.avatar}}" alt="" srcset="">
+  <h1>My Profile</h1>
 
-   {{#if owner}} 
+  <div class='container-profile'>
+
+    <div class='container-profile-text'>
+      <h2>{{user.name}}</h2><br>
+      <h5>My contact</h5>
+      <h6>{{user.email}}</h6><br>
+      <h5>About me</h5>
+      <p>{{user.about}}</p><br>
+    </div>
+
+    <div class='container-profile'>
+      <img id="profile-picture" src="{{user.avatar}}" alt="" srcset="">
+    </div>
+  </div> 
+
+    {{#if owner}} 
+    <div class='container-profile-buttons'>
+      <a href="/profile/{{user._id}}/edit/avatar"><button>Edit image</button></a> 
     
-   <button><a href="/profile/{{user._id}}/edit/avatar"><change>Edit</button></a> 
-  </button>
-  <a href="/profile/{{user._id}}/edit"><button>Edit</button></a> 
-  {{/if}}  
-</div>
-
+      <a href="/profile/{{user._id}}/edit"><button>Edit profile</button></a> 
+    </div>
+      {{/if}}  
 </div>

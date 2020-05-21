@@ -1,15 +1,14 @@
 <div class='style-body-pages'>
 
-<h1>Edit Image Profile</h1>
+  <h1>Edit image</h1>
 
-<form action="" enctype="multipart/form-data" method="post">
-
- 
-  <img src="{{user.avatar}}" alt="" >
-  <label for="avatar-input">Avatar</label>
-  <input type='file' name='avatar' id='avatar-input' accept='image/png, image/jpeg'>
-  
-  <button>Update image</button>
-
-</form>
+  <div class='container-profile-edit'>
+    <form action="" enctype="multipart/form-data" method="post">
+      <img class='image-profile-edit' src="{{user.avatar}}" alt="" >
+      
+      <label for="avatar-input"></label>
+      <input type='file' name='avatar' id='avatar-input' accept='image/png, image/jpeg'>
+      <button>Update</button>
+    </form>
+  </div>
 </div>
