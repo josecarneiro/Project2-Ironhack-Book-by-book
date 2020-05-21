@@ -18,7 +18,7 @@ const bookList = require('./routes/list');
 
 const authenticationRouter = require('./routes/authentication');
 const bookRouter = require('./routes/books');
-const app = express();
+const app = express(); 
 const uploader = require('./middleware/uploader');
 const profileRouter = require('./routes/profile');
 const hbs = require('hbs');
