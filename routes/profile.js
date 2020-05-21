@@ -18,7 +18,7 @@ router.get('/:id', (req, res, next) => {
   User.findById(id)
     .then((userProfile) => {
       console.log(userProfile);
-      let owner = id.toString() === cookiesId.toString() ? true : false;
+      const owner = id.toString() === cookiesId.toString() ? true : false;
       console.log(owner);
       res.render('user/profile', { userProfile  , owner });
     })

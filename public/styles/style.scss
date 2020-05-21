@@ -16,6 +16,7 @@ nav {
   justify-content: flex-end;
   align-items: center;
   background-color: #f8f7f7ff;
+  box-shadow: 1px 2px 4px -2px rgba(0,0,0,.6);
   padding: 1em;
   a {
     display: flex;
@@ -25,14 +26,27 @@ nav {
     margin-left: 7px;
   }
 }
+img {
+  width: 100%;
+  max-width: 100%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+textarea {
+  min-height: 8em;
+  resize: vertical;
+}
 .style-body-pages {
   max-width: 70em;
   padding: 0 1em;
   margin: 3em auto;
   line-height: 2;
-  
 }
-
+#back-sign-up{
+  background-color: #f8f7f7ff;
+}
 #navbar-search {
   margin: auto;
   form {
@@ -58,35 +72,12 @@ nav {
     margin-left: 7px;
   }
 }
-
-img {
-  width: 100%;
-  max-width: 100%;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-textarea {
-  min-height: 8em;
-  resize: vertical;
-}
-
 #map-view {
   width: 50%;
   height: 15em;
 }
-// #profile-container {
-//   display: flex;
-//   flex-direction: column;
-// }
-// #profile-picture img {
-//   width: 1em;
-//   border: solid;
-// }
 
-// HOME PAGE
+// --------- HOME PAGE
 #boxHomePage {
   width: 690px;
   height: 350px;
@@ -146,9 +137,8 @@ textarea {
   font-size: 2em;
   margin-left: 3em;
   padding-top: 15px;
-  text-shadow: -2px 0px 10px #000000; // text-shadow: -2px 0px 100px #000000;
+  text-shadow: -2px 0px 10px #000000;
   display: flex;
-
   flex-direction: row;
 }
 .button-log-out {
@@ -156,16 +146,12 @@ textarea {
   text-decoration: none;
   background-color: transparent;
 }
-//home page
+// --------- HOME PAGE SIGNUP
 .box-homepage-books {
   display: flex;
   flex-direction: row;
   margin-top: 1em;
 }
-
-// .box-homepage-books :hover {
-//   transform: scale(1.1);
-// }
 .box-homepage-books div {
   display: flex;
   flex-direction: column;
@@ -174,39 +160,38 @@ textarea {
   max-width: 100%;
   margin: 1em;
 }
-
-// .style-body-pages > ul :hover {
-//   transform: scale(1.01);
-// }
 .box-homepage-user {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin-left: 2em;
 }
-
 .sign-up {
-  margin-top: 20%;
+  margin: 7em auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 2em;
-  background-color: #f8f7f7;
+  background-color: white;
+  width: 870px;
   button {
     color: white;
     background-color: #c44536;
-    margin-top: 1em;
+    margin: 1em 0em;
     border-color: #c44536;
     border-style: solid;
     font-size: 1em;
+    width: 800px;
+    height: 50px;
   }
   label {
     font-weight: bold;
     color: #772e25;
   }
-
   input {
     margin-bottom: 1em;
+    width: 800px;
+    height: 50px;
   }
 }
 
@@ -398,5 +383,33 @@ textarea {
   };
   form{
     width: 800px;
+  }
+}
+// ------- ADD A BOOK
+.container-add-book{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 10px auto;
+  width: 600px;
+  // background-color: #f8f7f7ff ;
+  margin: 10px 10px;
+  input{
+    width: 600px;
+    margin: 10px auto;
+  };
+
+}
+#container-addbook{
+  background-image: url('/images/image2.jpg');
+  // background-size: cover;
+  background-repeat: repeat;
+  height: 1080px;
+  display: flex;
+  margin-top: 10px;
+  h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
