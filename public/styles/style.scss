@@ -1,9 +1,5 @@
 $font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $grey: hsla(0, 0, 75%, 0.5);
-#test{
-  border: red;
-  background: black;
-}
 * {
   &,
   &:before,
@@ -15,18 +11,18 @@ a {
   color: inherit;
   text-decoration: none;
 }
-nav{
+nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   background-color: #f8f7f7ff;
   padding: 1em;
-  a{
+  a {
     display: flex;
     padding: 5px;
     text-decoration: none;
     color: black;
-    margin-left: 7px
+    margin-left: 7px;
   }
 }
 .style-body-pages {
@@ -38,19 +34,19 @@ nav{
 
 #navbar-search {
   margin: auto;
-  form{
+  form {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-  }; 
-  input{
+  }
+  input {
     background-color: white;
     color: black;
     width: 300px;
     height: 30px;
     margin-left: 5px;
-  };
-  button{
+  }
+  button {
     background-color: black;
     color: white;
     border-radius: 5px;
@@ -91,8 +87,8 @@ textarea {
 
 // HOME PAGE
 #boxHomePage {
-  width:690px;
-  height:350px;
+  width: 690px;
+  height: 350px;
   // background: white;
   // opacity: 0.8;
   background: rgba(255, 255, 255, 0.6);
@@ -101,29 +97,29 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
- button{
-  margin: 25px 20px;
-  background-color: #772e25ff;
-  color: white;
-  padding: 17px 300px;
- }
- p{
-   display: flex;
-   align-items: center;
-  justify-content: center;
- }
- a{
-   color: #c44536ff;
- }
+  button {
+    margin: 25px 20px;
+    background-color: #772e25ff;
+    color: white;
+    padding: 17px 300px;
+  }
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  a {
+    color: #c44536ff;
+  }
 }
-#input-email{
+#input-email {
   margin: 30px 20px 0px 20px;
   background-color: white;
   display: flex;
   align-items: center;
   height: 50px;
 }
-#input-password{
+#input-password {
   margin: 20px 20px 10px 20px;
   background-color: white;
   display: flex;
@@ -138,15 +134,14 @@ textarea {
   display: flex;
   flex-direction: row;
 }
-#titleHomeView 
-  h1{
+#titleHomeView h1 {
   color: white;
   margin-left: 60px;
   padding-top: 250px;
   font-size: 70px;
   text-shadow: -2px 2px #cdd2d5, 2px 2px 0px black;
 }
-#titleHomeView p{
+#titleHomeView p {
   color: white;
   font-size: 30px;
   margin-left: 55px;
@@ -155,22 +150,33 @@ textarea {
   display: flex;
   flex-direction: row;
 }
-.button-log-out{
+.button-log-out {
   border: none;
   text-decoration: none;
   background-color: transparent;
 }
 //home page
-.box-homepage-books{
-  display: flex;
-  flex-direction: column;
-  margin-top: 1em;
-}
-.box-homepage-user{
+.box-homepage-books {
   display: flex;
   flex-direction: row;
-  a{
+  margin-top: 1em;
+}
+
+// .box-homepage-books :hover {
+//   transform: scale(1.2);
+// }
+.box-homepage-books div {
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+}
+.box-homepage-books div img {
+  max-width: 100%;
+}
+.box-homepage-user {
+  display: flex;
+  flex-direction: row;
+  a {
     margin-right: 2em;
   }
 }
-
