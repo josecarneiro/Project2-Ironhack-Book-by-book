@@ -1,10 +1,36 @@
+
 <div class='style-body-pages'>
-  <h3>Books available</h3>
-  {{#each books}}
-    <a href="/book/{{_id}}"><h4>{{this.bookTitle}}</h4></a>
-    <a href="/book/{{_id}}"><h4>{{this.bookAuthor}}</h4></a>
-  {{#if owner}}
-    {{!-- <a href="/book/{{_id}}/edit">Edit this book</a> --}}
-  {{/if}}
-  {{/each}}
- </div>
+  <div class="user-books"> 
+  <h2>All books from {{books.0.userCreator.name}}</h2>
+    <ul class="user-books">
+      {{#each books}}
+      <div class='box-homepage-books'>
+        <div>
+          <img src="{{thumb}}" alt="{{title}}">
+        </div>
+        <div class='box-homepage-user'>
+          <a href="/book/{{_id}}">
+            <h2>{{bookTitle}}</h2>
+            <h4>{{author}}</h4>
+                    
+          </a>
+        <div>
+          
+          {{!-- <span> --}}
+          {{!-- <a href="/profile/{{userCreator}}"> {{userCreator.name}} Profile</a> --}}
+          {{!-- <a href="/profile/{{userCreator}}/books">Other books from this user</a> --}}
+          {{!-- {{#if owner}} --}}
+          {{!-- <a href="/book/{{_id}}/edit">Edit this book</a> --}}
+          {{!-- {{/if}} --}}
+          {{!-- </span> --}}
+        </div>
+        </div>
+      </div>
+      {{/each}}
+    </ul>
+
+  </div>  
+</div>  
+
+
+
