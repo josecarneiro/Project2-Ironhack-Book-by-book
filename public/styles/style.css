@@ -10,6 +10,7 @@ nav {
   justify-content: flex-end;
   align-items: center;
   background-color: #f8f7f7ff;
+  box-shadow: 1px 2px 4px -2px rgba(0, 0, 0, 0.6);
   padding: 1em; }
   nav a {
     display: flex;
@@ -18,11 +19,26 @@ nav {
     color: black;
     margin-left: 7px; }
 
+img {
+  width: 100%;
+  max-width: 100%; }
+
+form {
+  display: flex;
+  flex-direction: column; }
+
+textarea {
+  min-height: 8em;
+  resize: vertical; }
+
 .style-body-pages {
   max-width: 70em;
   padding: 0 1em;
   margin: 3em auto;
   line-height: 2; }
+
+#back-sign-up {
+  background-color: #f8f7f7ff; }
 
 #navbar-search {
   margin: auto; }
@@ -45,18 +61,6 @@ nav {
     align-items: center;
     justify-content: center;
     margin-left: 7px; }
-
-img {
-  width: 100%;
-  max-width: 100%; }
-
-form {
-  display: flex;
-  flex-direction: column; }
-
-textarea {
-  min-height: 8em;
-  resize: vertical; }
 
 #map-view {
   width: 50%;
@@ -147,24 +151,29 @@ textarea {
   margin-left: 2em; }
 
 .sign-up {
-  margin-top: 20%;
+  margin: 7em auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 2em;
-  background-color: #f8f7f7; }
+  background-color: white;
+  width: 870px; }
   .sign-up button {
     color: white;
     background-color: #c44536;
-    margin-top: 1em;
+    margin: 1em 0em;
     border-color: #c44536;
     border-style: solid;
-    font-size: 1em; }
+    font-size: 1em;
+    width: 800px;
+    height: 50px; }
   .sign-up label {
     font-weight: bold;
     color: #772e25; }
   .sign-up input {
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    width: 800px;
+    height: 50px; }
 
 .form-add {
   display: flex;
@@ -308,5 +317,27 @@ textarea {
     margin-top: 2em; }
   .container-profile-edit form {
     width: 800px; }
+
+.container-add-book {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 10px auto;
+  width: 600px;
+  margin: 10px 10px; }
+  .container-add-book input {
+    width: 600px;
+    margin: 10px auto; }
+
+#container-addbook {
+  background-image: url("/images/image2.jpg");
+  background-repeat: repeat;
+  height: 1080px;
+  display: flex;
+  margin-top: 10px; }
+  #container-addbook h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
 
 /*# sourceMappingURL=style.css.map */
