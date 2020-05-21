@@ -7,17 +7,16 @@ const axios = require('axios');
 const apiKey = process.env.BOOK_API_KEY;
 const routeGuard = require('./../middleware/route-guard');
 
-// Display Single book page
+// ------------ SINGLE BOOK
 
-router.get('/test', (req, res, next) => {
-  // /:id
-  res.render('book/singleBook');
-});
-
-router.get('/test/create', (req, res, next) => {
-  // /:id
-  res.render('book/AddBookLogic');
-});
+// router.get('/test', (req, res, next) => {
+//   /:id
+//   res.render('book/singleBook');
+// });
+// router.get('/test/create', (req, res, next) => {
+//   /:id
+//   res.render('book/AddBookLogic');
+// });
 
 router.get('/search', (req, res) => {
   res.render('user/searchBook');
@@ -25,7 +24,7 @@ router.get('/search', (req, res) => {
 
 router.get('/result', (req, res, next) => {
   const title = req.query.title;
-  const maxResults = 5;
+  const maxResults = 30;
   axios
     .get(
       `https://www.googleapis.com/books/v1/volumes?q=${title}&startIndex=0&maxResults=${maxResults}`
@@ -50,9 +49,11 @@ router.get('/result', (req, res, next) => {
       console.log('There was an error loading response from api');
       console.log(error);
       res.send('There was an error processing your request.');
+      next(error);
     });
 });
-// Display create book page
+
+// ------------ CREATE BOOK
 
 router.get('/create/:id', (req, res) => {
   const id = req.params.id;
@@ -105,7 +106,6 @@ router.get('/:id', (req, res, next) => {
   const id = req.params.id;
   Book.findById(id)
     .then((result) => {
-      // console.log('here', result);
       res.render('book/singlebook', { result });
     })
     .catch((error) => {
@@ -116,10 +116,12 @@ router.get('/:id', (req, res, next) => {
 
 router.get('/:id/edit', (req, res, next) => {
   const id = req.params.id;
+  const cookiesId = req.user._id;
   Book.findById(id)
-    .then((result) => {
-      console.log('here', result);
-      res.render('user/editBook', { result });
+  .then((result) => {
+    const owner = id.toString() === cookiesId.toString() ? true : false;
+    console.log(owner);
+    res.render('user/editBook', { result });
     })
     .catch((error) => {
       console.log(error);
@@ -161,12 +163,11 @@ router.post('/:id/edit', routeGuard, (req, res, next) => {
     });
 });
 
-router.get('/:id/delete', (req, res, next) => {
+router.post('/:id/delete', (req, res, next) => {
   const id = req.params.id;
   Book.findByIdAndDelete(id)
-    .then((result) => {
-      console.log('here', result);
-      res.render('/');
+    .then(() => {
+      res.redirect('/list');
     })
     .catch((error) => {
       console.log(error);

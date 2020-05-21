@@ -1,7 +1,6 @@
-
-
 <div class="style-body-pages">
   <h2>Create a new book</h2>
+
 
 
   <div class="form-add">
@@ -14,6 +13,7 @@
 
         <label for="author-input">Book Author</label>
         <input id='author-input' name='author' type='text' value="{{#each singleBook.authors}} {{this}},{{/each}}"> 
+
 
         <label for="description-input">Book description</label>
         <textarea name="description" id="cdescription-input" form="add" placeholder='Insert your comment about the book...'>{{singleBook.description}}</textarea>
@@ -49,9 +49,6 @@
   </div>
    
 </div>
-
-
-
 
   <script src='/scripts/mapsCreate.js'></script>
   <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCvNd635sKmUOsRjS--aKxAHfNu9bwD7QU&callback=initMap'></script>
