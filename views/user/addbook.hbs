@@ -1,41 +1,56 @@
-Create a new book
 
 
-
-<form action='/book/create' method='POST'>
-
-  
-    <label for="title-form">Book Name</label>
-    <input id='title-form' name='bookTitle' type='text' value="{{singleBook.title}}"> 
-
-    <label for="author-input">Book Author</label>
-    <input id='author-input' name='author' type='text' value="{{#each singleBook.authors}} {{this}},{{/each}}"> 
-
-    <label for="description-input"> description</label>
-    <input id='description-input' name='description' type='text' value="{{singleBook.description}}"> 
-
-    <label for="comment-input"> comment</label>
-    <input id='comment-input' name='bookComment' type='text-area' placeholder='Insert your comment about the book...'> 
-
-    <label for="">Images from your book</label>
-    <input type='file' name='picture' id='picture-input' accept='image/png, image/jpeg'> 
+<div class="style-body-pages">
+  <h2>Create a new book</h2>
 
 
-    <label for='thumb-input'></label>
-    <input type='hidden' name='thumb' id='thumb-input' value="{{singleBook.smallThumbnail}}">
+  <div class="form-add">
+    <div>
+      <div class="form-left">
+    <form action='/book/create' method='POST' id="add">      
+      
+        <label for="title-form">Book Name</label>
+        <input id='title-form' name='bookTitle' type='text' value="{{singleBook.title}}"> 
+
+        <label for="author-input">Book Author</label>
+        <input id='author-input' name='author' type='text' value="{{#each singleBook.authors}} {{this}},{{/each}}"> 
+
+        <label for="description-input">Book description</label>
+        <textarea name="description" id="cdescription-input" form="add" placeholder='Insert your comment about the book...'>{{singleBook.description}}</textarea>
+        <label for="comment-input"> Comment</label>     
+        <textarea name="bookComment" id="comment-input" form="add" placeholder='Insert your comment about the book...'></textarea>
+
+        <label for="">Images from your book</label>
+        <input type='file' name='picture' id='picture-input' accept='image/png, image/jpeg'> 
 
 
-    <label for='lat-input'></label>
-    <input type='hidden' name='latitude' id='latitude-input'>
+        <label for='thumb-input'></label>
+        <input type='hidden' name='thumb' id='thumb-input' value="{{singleBook.smallThumbnail}}">
 
-    <label for='lng-input'></label>
-    <input type='hidden' name='longitude' id='longitude-input'>
 
+        <label for='lat-input'></label>
+        <input type='hidden' name='latitude' id='latitude-input'>
+
+        <label for='lng-input'></label>
+        <input type='hidden' name='longitude' id='longitude-input'>
+
+        </div>
+     
+      <div class="form-right">
+
+        <h3>Where</h3>
+        <div id="map-view"></div>
+      </div>
+       </div>
+        <button type='submit'>Submit book</button>
+    </form>
     
-    <button type='submit'>Submit book</button>
-</form>
+    </div>
+  </div>
+   
+</div>
 
-<div id="map-view" style="width: 50%; height: 50em"></div>
+
 
 
   <script src='/scripts/mapsCreate.js'></script>

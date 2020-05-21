@@ -5,15 +5,17 @@
       <div>
         <img src="{{thumb}}" alt="{{title}}">
       </div>
-      <div>
+      <div class='box-homepage-user'>
         <a href="book/{{_id}}">
           <h2>{{bookTitle}}</h2>
-          <h4>{{author}}</h4>
-          <p>{{bookComment}}</p>
+          <h4>{{author}}</h4>          
         </a>
-        <div class='box-homepage-user'>
-        <h6><a href="/profile/{{userCreator}}"> {{userCreator.name}} Profile</a></h6>
-        <h6><a href="/profile/{{userCreator}}/books">Other books from this user</a></h6>
+        <p>{{bookComment}}</p>
+        <div>
+       <span>
+        <a href="/profile/{{userCreator}}"> {{userCreator.name}} Profile</a>
+        <a href="/profile/{{userCreator}}/books">Other books from this user</a>
+        </span>
         </div>
       </div>
     </div>

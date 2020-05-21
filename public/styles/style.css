@@ -75,7 +75,8 @@ textarea {
     margin: 25px 20px;
     background-color: #772e25ff;
     color: white;
-    padding: 17px 300px; }
+    padding: 17px 300px;
+    border: none; }
   #boxHomePage p {
     display: flex;
     align-items: center;
@@ -107,17 +108,17 @@ textarea {
 
 #titleHomeView h1 {
   color: white;
-  margin-left: 60px;
+  margin-left: 1em;
   padding-top: 250px;
-  font-size: 70px;
-  text-shadow: -2px 2px #cdd2d5, 2px 2px 0px black; }
+  font-size: 5em;
+  text-shadow: 2px 2px 10px black; }
 
 #titleHomeView p {
   color: white;
-  font-size: 30px;
-  margin-left: 55px;
+  font-size: 2em;
+  margin-left: 3em;
   padding-top: 15px;
-  text-shadow: -2px 0px #000000;
+  text-shadow: -2px 0px 10px #000000;
   display: flex;
   flex-direction: row; }
 
@@ -131,21 +132,99 @@ textarea {
   flex-direction: row;
   margin-top: 1em; }
 
-.box-homepage-books :hover {
-  transform: scale(1.2); }
-
 .box-homepage-books div {
   display: flex;
-  flex-direction: column;
-  margin: 1em; }
+  flex-direction: column; }
 
 .box-homepage-books div img {
-  max-width: 100%; }
+  max-width: 100%;
+  margin: 1em; }
 
 .box-homepage-user {
   display: flex;
-  flex-direction: row; }
-  .box-homepage-user a {
-    margin-right: 2em; }
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 2em; }
+
+.sign-up {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2em;
+  background-color: #f8f7f7; }
+  .sign-up button {
+    color: white;
+    background-color: #c44536;
+    margin-top: 1em;
+    border-color: #c44536;
+    border-style: solid;
+    font-size: 1em; }
+  .sign-up label {
+    font-weight: bold;
+    color: #772e25; }
+  .sign-up input {
+    margin-bottom: 1em; }
+
+.form-add {
+  display: flex;
+  flex-direction: column; }
+  .form-add div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; }
+  .form-add button {
+    color: white;
+    background-color: #c44536;
+    margin-top: 1em;
+    border-color: #c44536;
+    border-style: solid;
+    font-size: 1em; }
+  .form-add .form-left {
+    display: flex;
+    flex-direction: column; }
+  .form-add .form-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; }
+  .form-add #map-view {
+    padding-left: 30em;
+    width: inherit; }
+  .form-add form label {
+    font-weight: bold;
+    color: #772e25; }
+  .form-add form input {
+    margin-bottom: 1em; }
+  .form-add textarea {
+    overflow-y: scroll;
+    height: 4em;
+    width: 100%; }
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .search-form label {
+    font-weight: bold;
+    color: #772e25; }
+  .search-form input {
+    margin-bottom: 1em; }
+  .search-form textarea {
+    overflow-y: scroll;
+    height: 4em;
+    width: 100%; }
+  .search-form button {
+    color: white;
+    background-color: #c44536;
+    margin-top: 1em;
+    border-color: #c44536;
+    border-style: solid;
+    font-size: 1em; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: purple; }
 
 /*# sourceMappingURL=style.css.map */
