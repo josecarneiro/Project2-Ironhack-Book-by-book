@@ -55,14 +55,12 @@ router.get('/:id/edit/avatar', routeGuard, (req, res, next) => {
 });
 
 router.post('/:id/edit/avatar', routeGuard, uploader.single('avatar'), (req, res, next) => {
-  console.log('hi');
   const id = req.user._id;
   const avatar = req.file.url; //if have time, add a if(owner) to add an extray safety layer else{ redirect '/'}
   User.findByIdAndUpdate(id, {
     avatar
   })
     .then((result) => {
-      console.log(result); // not running
       res.redirect(`/profile/${id}`);
     })
     .catch((error) => {
@@ -72,7 +70,6 @@ router.post('/:id/edit/avatar', routeGuard, uploader.single('avatar'), (req, res
 });
 
 router.get('/:id/books', (req, res, next) => {
-  console.log('its working');
   const id = req.params.id;
   Book.find({ userCreator: id })
     .populate('userCreator')

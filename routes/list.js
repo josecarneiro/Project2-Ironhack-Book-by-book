@@ -36,7 +36,6 @@ router.get('/:id', (req, res, next) => {
   Book.findById(id)
     .populate('userCreator')
     .then((result) => {
-      console.log('here', result);
       res.render('book/singleBook', { result });
     })
     .catch((error) => {
