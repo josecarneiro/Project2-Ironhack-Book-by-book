@@ -131,9 +131,6 @@ textarea {
   flex-direction: row;
   margin-top: 1em; }
 
-.box-homepage-books :hover {
-  transform: scale(1.2); }
-
 .box-homepage-books div {
   display: flex;
   flex-direction: column;
