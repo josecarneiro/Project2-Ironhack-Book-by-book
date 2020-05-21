@@ -18,12 +18,12 @@
       {{>searchBar}}
       </div>
       {{!-- links --}}
-      <a href="/list">Home</a>
-      <a href='/book/search'>Add Book</a>
-      <a href="/profile/{{user._id}}/books">My books</a>
-      <a href="/profile/{{user._id}}">{{user.name}}'s Profile</a>
+      <a href="/list">Home</a>|
+      <a href='/book/search'>Add Book</a>|
+      <a href="/profile/{{user._id}}/books">My books</a>|
+      <a href="/profile/{{user._id}}">{{user.name}}'s Profile</a>|
       <form action="/authentication/sign-out" method="POST">
-        <a href="/">Log out</a>
+        <a href="/"><button class='button-log-out'>Log out</button></a>
       </form>
       {{/if}}
     </nav>
