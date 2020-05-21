@@ -1,3 +1,5 @@
+PALLET
+
 /* CSS */
 --color1: hsla(174%, 34%, 24%, 1);
 --color2: hsla(0%, 0%, 77%, 1);
