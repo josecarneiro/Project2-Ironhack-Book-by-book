@@ -6,13 +6,13 @@
  <ul>
 {{#each books}}
 <div>
-  <img src="{{picture}}" alt="{{title}}">
+  <img src="{{thumb}}" alt="{{title}}">
 </div>
 <div>
  <a href="book/{{_id}}">
   <h3>{{bookTitle}}</h3>
   <h4>{{author}}</h4>
-  <p>{{booksComment}}</p>
+  <p>{{bookComment}}</p>
  </a>
  <h6><a href="/profile/{{userCreator}}"> {{userCreator.name}} Profile</a></h6>
  <h6><a href="/profile/{{userCreator}}/books">Other books from this user</a></h6>

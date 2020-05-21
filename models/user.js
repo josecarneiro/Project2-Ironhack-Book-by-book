@@ -21,9 +21,9 @@ const schema = new mongoose.Schema({
     default:
       'https://res.cloudinary.com/dzf57hnmi/image/upload/v1589323455/Lab%20File%20Upload/vkieav0emdln4jpjdy7y.jpg'
   },
-
   about: {
-    type: String
+    type: String,
+    trim: true
   }
 });
 
