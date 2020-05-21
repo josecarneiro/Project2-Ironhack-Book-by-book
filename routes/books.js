@@ -4,8 +4,8 @@ const { Router } = require('express');
 const router = new Router();
 const Book = require('../models/book');
 const axios = require('axios');
-const routerguard = require('./../middleware/route-guard');
 const apiKey = process.env.BOOK_API_KEY;
+const routeGuard = require('./../middleware/route-guard');
 
 // Display Single book page
 
@@ -78,6 +78,7 @@ router.get('/create/:id', (req, res) => {
 });
 
 router.post('/create', (req, res, next) => {
+  // If have time, add file uploader
   const { bookTitle, author, bookComment, thumb, latitude, longitude, description } = req.body;
 
   Book.create({
@@ -104,8 +105,68 @@ router.get('/:id', (req, res, next) => {
   const id = req.params.id;
   Book.findById(id)
     .then((result) => {
-      console.log('here', result);
+      // console.log('here', result);
       res.render('book/singlebook', { result });
+    })
+    .catch((error) => {
+      console.log(error);
+      next(error);
+    });
+});
+
+router.get('/:id/edit', (req, res, next) => {
+  const id = req.params.id;
+  Book.findById(id)
+    .then((result) => {
+      console.log('here', result);
+      res.render('user/editBook', { result });
+    })
+    .catch((error) => {
+      console.log(error);
+      next(error);
+    });
+});
+
+router.post('/:id/edit', routeGuard, (req, res, next) => {
+  const creatorId = req.body.userCreator; // //if have time, add a if(owner) to add an extray safety layer else{ redirect '/'}
+  const { name, about } = req.body;
+  const { bookTitle, author, bookComment, thumb, latitude, longitude, description } = req.body;
+  const id = req.params.id;
+  const cookiesId = req.user._id;
+
+  // let owner = cookiesId.toString() === creatorId.toString() ? true : false;
+
+  Book.findByIdAndUpdate(
+    id,
+    {
+      bookTitle,
+      bookComment,
+      author,
+      thumb,
+      description,
+      userCreator: req.user._id
+      // location: { // if update geolocatio, everthing breaks
+      //   coordinates: [longitude, latitude]
+      // }
+    },
+    { new: true }
+  )
+    .then((book) => {
+      console.log(book);
+      res.redirect(`/book/${book._id}`);
+    })
+    .catch((error) => {
+      console.log(error);
+      next(error);
+    });
+});
+
+router.get('/:id/delete', (req, res, next) => {
+  const id = req.params.id;
+  Book.findByIdAndDelete(id)
+    .then((result) => {
+      console.log('here', result);
+      res.render('/');
     })
     .catch((error) => {
       console.log(error);

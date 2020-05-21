@@ -1,16 +1,14 @@
 <h1>Edit Profile</h1>
 
-<form action="" enctype="multipart/form-data" method="post">
 
+<form action="" method="POST">
   <label for="input-name">Name</label>
   <input type="text" id="input-name" name="name" placeholder="Your Name" value="{{user.name}}" />
 
   <label for="input-about">about</label>
-  <input type="text-area" name="about" id="input-about" placeholder="About you" value="{{user.about}}" />
+  <input type="text-area" name="about" id="input-about" placeholder="About you" value="{{user.about}}"/>
 
-  <img src="{{user.avatar}}" alt="" >
-  <label for="avatar-input">Avatar</label>
-  <input type='file' name='avatar' id='avatar-input' accept='image/png, image/jpeg'>
+
   
   <button>Update</button>
 
