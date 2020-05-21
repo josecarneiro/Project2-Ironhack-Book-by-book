@@ -41,7 +41,8 @@ router.post('/sign-in', (req, res, next) => {
   User.findOne({ email })
     .then((document) => {
       if (!document) {
-        return Promise.reject(new Error("There's no user with that email."));
+        res.redirect('sign-up');
+        // return Promise.reject(new Error("There's no user with that email."));
       } else {
         user = document;
         return bcryptjs.compare(password, user.passwordHash);
@@ -52,11 +53,12 @@ router.post('/sign-in', (req, res, next) => {
         req.session.user = user._id;
         res.redirect('/list');
       } else {
-        return Promise.reject(new Error('Wrong password.'));
+        // return Promise.reject(new Error('Wrong password.'));
+        res.redirect('/');
       }
     })
     .catch((error) => {
-      res.redirect('/');
+      next(error);
     });
 });
 

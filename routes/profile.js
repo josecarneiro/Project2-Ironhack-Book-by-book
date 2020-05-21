@@ -12,15 +12,10 @@ router.get('/:id', (req, res, next) => {
   const id = req.params.id;
   const cookiesId = req.user._id;
 
-  console.log(cookiesId);
-  console.log(id);
-
   User.findById(id)
     .then((userProfile) => {
-      console.log(userProfile);
       let owner = id.toString() === cookiesId.toString() ? true : false;
-      console.log(owner);
-      res.render('user/profile', { userProfile  , owner });
+      res.render('user/profile', { userProfile, owner });
     })
     .catch((error) => next(error));
 });
@@ -40,7 +35,6 @@ router.post('/:id/edit', routeGuard, (req, res, next) => {
     about
   })
     .then((result) => {
-      console.log(result); // not running
       res.redirect(`/profile/${id}`);
     })
     .catch((error) => {
@@ -74,8 +68,11 @@ router.get('/:id/books', (req, res, next) => {
   Book.find({ userCreator: id })
     .populate('userCreator')
     .then((books) => {
-      console.log(books);
-      res.render('user/userBooks', { books });
+      const profile = books[0].userCreator.id.toString();
+      const userLog = req.user._id.toString();
+      const owner = profile === userLog ? true : false;
+
+      res.render('user/userBooks', { books, owner });
     })
     .catch((error) => next(error));
 });

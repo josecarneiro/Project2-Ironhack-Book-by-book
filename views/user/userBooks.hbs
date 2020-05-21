@@ -12,17 +12,18 @@
           <a href="/book/{{_id}}">
             <h2>{{bookTitle}}</h2>
             <h4>{{author}}</h4>
-                    
-          </a>
-        <div>
+            </a>
+        <div>     
+          {{#if ../owner}}      
+          <span> 
+          <a href="/profile/{{userCreator._id}}"> {{userCreator.name}} Profile</a> 
+                 
           
-          {{!-- <span> --}}
-          {{!-- <a href="/profile/{{userCreator}}"> {{userCreator.name}} Profile</a> --}}
-          {{!-- <a href="/profile/{{userCreator}}/books">Other books from this user</a> --}}
-          {{!-- {{#if owner}} --}}
-          {{!-- <a href="/book/{{_id}}/edit">Edit this book</a> --}}
-          {{!-- {{/if}} --}}
-          {{!-- </span> --}}
+           <a href="/book/{{_id}}/edit">Edit this book</a>
+          
+          </span> 
+          {{/if}}
+
         </div>
         </div>
       </div>

@@ -6,17 +6,9 @@ const Book = require('../models/book');
 const axios = require('axios');
 const apiKey = process.env.BOOK_API_KEY;
 const routeGuard = require('./../middleware/route-guard');
+const ownerGuard = require('./../middleware/owner-guard');
 
 // ------------ SINGLE BOOK
-
-// router.get('/test', (req, res, next) => {
-//   /:id
-//   res.render('book/singleBook');
-// });
-// router.get('/test/create', (req, res, next) => {
-//   /:id
-//   res.render('book/AddBookLogic');
-// });
 
 router.get('/search', (req, res) => {
   res.render('user/searchBook');
@@ -42,7 +34,6 @@ router.get('/result', (req, res, next) => {
           descripition: result.data.items[i].volumeInfo.descripition
         });
       }
-      console.log(bookResults);
       res.render('user/searchResult', { bookResults });
     })
     .catch((error) => {
@@ -68,7 +59,6 @@ router.get('/create/:id', (req, res) => {
         description: result.data.items[0].volumeInfo.description,
         smallThumbnail: result.data.items[0].volumeInfo.imageLinks.smallThumbnail
       };
-      console.log(singleBook);
       res.render('user/addbook', { singleBook });
     })
     .catch((error) => {
@@ -94,7 +84,6 @@ router.post('/create', (req, res, next) => {
     }
   })
     .then((book) => {
-      console.log(book);
       res.redirect(`/book/${book._id}`);
     })
     .catch((error) => {
@@ -103,28 +92,31 @@ router.post('/create', (req, res, next) => {
 });
 
 router.get('/:id', (req, res, next) => {
-  //res.json({message: "Hi Aline"});
-  
   const id = req.params.id;
   Book.findById(id)
-    .then((result) => {  
+    .then((result) => {
       res.render('book/singleBook', { result });
     })
     .catch((error) => {
       console.log(error);
       next(error);
     });
-    
 });
 
 router.get('/:id/edit', (req, res, next) => {
   const id = req.params.id;
   const cookiesId = req.user._id;
+
   Book.findById(id)
-  .then((result) => {
-    const owner = id.toString() === cookiesId.toString() ? true : false;
-    console.log(owner);
-    res.render('user/editBook', { result });
+    .then((result) => {
+      const bookOwner = result.userCreator.toString();
+      const userLog = cookiesId.toString();
+      if (bookOwner === userLog) {
+        res.render('user/editBook', { result });
+      } else {
+        console.log('nao');
+        res.redirect('/list');
+      }
     })
     .catch((error) => {
       console.log(error);
@@ -157,7 +149,6 @@ router.post('/:id/edit', routeGuard, (req, res, next) => {
     { new: true }
   )
     .then((book) => {
-      console.log(book);
       res.redirect(`/book/${book._id}`);
     })
     .catch((error) => {
@@ -166,16 +157,31 @@ router.post('/:id/edit', routeGuard, (req, res, next) => {
     });
 });
 
-router.post('/:id/delete', (req, res, next) => {
+router.post('/:id/delete', routeGuard, (req, res, next) => {
   const id = req.params.id;
-  Book.findByIdAndDelete(id)
-    .then(() => {
-      res.redirect('/list');
+  const cookiesId = req.user._id;
+
+  Book.findById(id)
+    .then((result) => {
+      const bookOwner = result.userCreator.toString();
+      const userLog = cookiesId.toString();
+
+      if (bookOwner === userLog) {
+        console.log('autorizado');
+        Book.findByIdAndDelete(id)
+          .then(() => {
+            res.redirect('/list');
+          })
+          .catch((error) => {
+            console.log(error);
+            next(error);
+          });
+      } else {
+        console.log('nao autorizado');
+        res.redirect('/');
+      }
     })
-    .catch((error) => {
-      console.log(error);
-      next(error);
-    });
+    .catch((error) => next(error));
 });
 
 module.exports = router;

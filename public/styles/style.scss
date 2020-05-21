@@ -30,7 +30,6 @@ nav {
   padding: 0 1em;
   margin: 3em auto;
   line-height: 2;
-  
 }
 
 #navbar-search {
@@ -39,6 +38,9 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+  }
+  label {
+    margin-left: 1em;
   }
   input {
     background-color: white;
@@ -50,7 +52,7 @@ nav {
   button {
     background-color: black;
     color: white;
-    border-radius: 5px;
+    border: none;
     height: 30px;
     display: flex;
     align-items: center;
@@ -345,19 +347,19 @@ textarea {
   margin-top: em;
 }
 //PROFILE
-.container-profile{
+.container-profile {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 2em;
-  img{
+  img {
     max-width: 600px;
     max-height: 600px;
     border-radius: 10px;
     // margin-right: 300px;
   }
 }
-.container-profile-text{
+.container-profile-text {
   display: flex;
   align-items: flex-start;
   justify-content: left;
@@ -366,37 +368,36 @@ textarea {
   max-width: 600px;
   padding: 10px;
 }
-.container-profile-buttons{
+.container-profile-buttons {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   // margin-right: 300px;
   margin-top: 2em;
-  button{
+  button {
     background-color: black;
     color: white;
     border-radius: 5px;
-
   }
 }
 // EDIT IMAGE PROFILE
-.image-profile-edit{
+.image-profile-edit {
   max-width: 600px;
   max-height: 600px;
   display: flex;
   justify-content: center;
   margin-top: 3em;
 }
-.container-profile-edit{
+.container-profile-edit {
   display: flex;
-  button{
+  button {
     background-color: black;
     color: white;
     border-radius: 5px;
     width: 5em;
     margin-top: 2em;
-  };
-  form{
+  }
+  form {
     width: 800px;
   }
 }
