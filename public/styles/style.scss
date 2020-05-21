@@ -299,12 +299,20 @@ textarea {
 
   .book-container {
     flex-direction: row;
-    background-color: salmon;
+
+    img {
+      max-width: 10em;
+    }
   }
 
   .map-container {
     margin-right: auto;
     flex-direction: row;
     background-color: royalblue;
+  }
+
+  #map-view {
+    width: 50%;
+    height: 15em;
   }
 }
