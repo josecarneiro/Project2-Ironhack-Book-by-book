@@ -108,8 +108,8 @@ router.get('/:id', (req, res, next) => {
   const id = req.params.id;
   Book.findById(id)
     .then((result) => {  
-      res.json({messageFromAline: "Santi is the best"});
-      //res.render('book/singlebook', { result });
+      //res.json({messageFromAline: "Santi is the best"});
+      res.render('index');
     })
     .catch((error) => {
       console.log(error);
