@@ -19,7 +19,7 @@ const schema = new mongoose.Schema({
   avatar: {
     type: String,
     default:
-      'https://res.cloudinary.com/dzf57hnmi/image/upload/v1589323455/Lab%20File%20Upload/vkieav0emdln4jpjdy7y.jpg'
+      'https://res.cloudinary.com/dzf57hnmi/image/upload/v1590105567/book-by-book/g0hso6bfxex1b2rqocdv.jpg'
   },
   about: {
     type: String,
