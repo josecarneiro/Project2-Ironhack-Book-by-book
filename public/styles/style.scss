@@ -413,3 +413,34 @@ textarea {
     justify-content: center;
   }
 }
+.container-edit{
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  width: 90px;
+}
+// ----- EDIT BOOK 
+.container-edit-submit{
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  margin-right: 700px;
+  margin-top: 20px;
+  // width: 90px;
+}
+.container-edit-delete{
+  background-color: #772e25ff;
+  color: white;
+  border-radius: 5px;
+  // width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 700px;
+  margin-top: 20px;
+}
+.style-body-pages-editbook {
+  max-width: 62em;
+  padding: 0 1em;
+  margin: 3em auto 5em auto;
+}
