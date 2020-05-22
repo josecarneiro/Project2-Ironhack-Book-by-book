@@ -12,15 +12,11 @@ router.get('/:id', (req, res, next) => {
   const id = req.params.id;
   const cookiesId = req.user._id;
 
-  console.log(cookiesId);
-  console.log(id);
-
   User.findById(id)
     .then((userProfile) => {
-      console.log(userProfile);
       const owner = id.toString() === cookiesId.toString() ? true : false;
-      console.log(owner);
       res.render('user/profile', { userProfile , owner });
+
     })
     .catch((error) => next(error));
 });
@@ -40,7 +36,6 @@ router.post('/:id/edit', (req, res, next) => {
     about
   })
     .then((result) => {
-      console.log(result); // not running
       res.redirect(`/profile/${id}`);
     })
     .catch((error) => {
@@ -77,6 +72,7 @@ router.get('/:id/books', (req, res, next) => {
     .populate('userCreator')
     .then((books) => {
       const owner = books[0].userCreator._id.toString() === currentUser.toString() ? true : false;
+
       res.render('user/userBooks', { books, owner });
     })
     .catch((error) => next(error));

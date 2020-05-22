@@ -46,6 +46,8 @@ textarea {
     display: flex;
     flex-direction: row;
     justify-content: space-around; }
+  #navbar-search label {
+    margin-left: 1em; }
   #navbar-search input {
     background-color: white;
     color: black;
@@ -55,7 +57,7 @@ textarea {
   #navbar-search button {
     background-color: black;
     color: white;
-    border-radius: 5px;
+    border: none;
     height: 30px;
     display: flex;
     align-items: center;
