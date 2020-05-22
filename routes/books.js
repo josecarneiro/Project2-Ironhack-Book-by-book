@@ -139,7 +139,6 @@ router.post('/:id/edit', routeGuard, (req, res, next) => {
       bookTitle,
       bookComment,
       author,
-      thumb,
       description,
       userCreator: req.user._id
       // location: { // if update geolocatio, everthing breaks
@@ -185,28 +184,3 @@ router.post('/:id/delete', routeGuard, (req, res, next) => {
 });
 
 module.exports = router;
-
-// router.get('/search', (req, res) => {
-//   const title = req.query.title;
-//   axios
-//     .get(`https://www.googleapis.com/books/v1/volumes?q=${title}&startIndex=0&maxResults=40`)
-//     .then((result) => {
-//       const titleResults = result.data.items.map((books) => {
-//         let infoBook = '';
-//         return (infoBook = `${books.volumeInfo.title} - ${books.volumeInfo.authors}`);
-//       });
-//       const idResults = result.data.items.map((books) => {
-//         let bookId = '';
-//         return (bookId = `${books.id}`);
-//       });
-//       console.log(idResults);
-//       res.render('user/searchResult', {
-//         titleResults
-//       });
-//     })
-//     .catch((error) => {
-//       console.log('There was an error loading response from api');
-//       console.log(error);
-//       res.send('There was an error processing your request.');
-//     });
-// });

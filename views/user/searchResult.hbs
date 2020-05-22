@@ -1,10 +1,13 @@
 <div class='style-body-pages'>
-<h1>Search a Book</h1>
+<h2>Find your book:</h2>
+{{!-- 
+<div class='homeview-search-results'>
+    <form action='/book/result' method='GET'>
+        <input id='title' name='title' type='search' placeholder='Search a title book...'> 
+        <button type="submit" class='container-edit'>Search</button>
+    </form>
+</div> --}}
 
- <form action='/book/result' method='GET'>
-    <input id='title' name='title' type='search' placeholder='Search a title book...'> 
-    <button type="submit">Search</button>
-</form>
 <ul>
     {{#each bookResults}}
         <li class='book-item'>
@@ -13,7 +16,6 @@
         {{#each authors}} ({{this}}){{/each}}
         </a>
         </li>
-       
     {{/each}}
 </ul>
 </div>

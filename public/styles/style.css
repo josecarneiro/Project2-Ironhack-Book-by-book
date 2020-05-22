@@ -10,6 +10,7 @@ nav {
   justify-content: flex-end;
   align-items: center;
   background-color: #f8f7f7ff;
+  box-shadow: 1px 2px 4px -2px rgba(0, 0, 0, 0.6);
   padding: 1em; }
   nav a {
     display: flex;
@@ -18,11 +19,26 @@ nav {
     color: black;
     margin-left: 7px; }
 
+img {
+  width: 100%;
+  max-width: 100%; }
+
+form {
+  display: flex;
+  flex-direction: column; }
+
+textarea {
+  min-height: 8em;
+  resize: vertical; }
+
 .style-body-pages {
   max-width: 70em;
   padding: 0 1em;
   margin: 3em auto;
   line-height: 2; }
+
+#back-sign-up {
+  background-color: #f8f7f7ff; }
 
 #navbar-search {
   margin: auto; }
@@ -47,18 +63,6 @@ nav {
     align-items: center;
     justify-content: center;
     margin-left: 7px; }
-
-img {
-  width: 100%;
-  max-width: 100%; }
-
-form {
-  display: flex;
-  flex-direction: column; }
-
-textarea {
-  min-height: 8em;
-  resize: vertical; }
 
 #map-view {
   width: 50%;
@@ -111,7 +115,7 @@ textarea {
 #titleHomeView h1 {
   color: white;
   margin-left: 1em;
-  padding-top: 250px;
+  padding-top: 310px;
   font-size: 5em;
   text-shadow: 2px 2px 10px black; }
 
@@ -149,24 +153,29 @@ textarea {
   margin-left: 2em; }
 
 .sign-up {
-  margin-top: 20%;
+  margin: 7em auto;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 2em;
-  background-color: #f8f7f7; }
+  background-color: white;
+  width: 870px; }
   .sign-up button {
     color: white;
     background-color: #c44536;
-    margin-top: 1em;
+    margin: 1em 0em;
     border-color: #c44536;
     border-style: solid;
-    font-size: 1em; }
+    font-size: 1em;
+    width: 800px;
+    height: 50px; }
   .sign-up label {
     font-weight: bold;
     color: #772e25; }
   .sign-up input {
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    width: 800px;
+    height: 50px; }
 
 .form-add {
   display: flex;
@@ -174,7 +183,7 @@ textarea {
   .form-add div {
     display: flex;
     flex-direction: row;
-    justify-content: space-around; }
+    justify-content: flex-start; }
   .form-add button {
     color: white;
     background-color: #c44536;
@@ -184,14 +193,17 @@ textarea {
     font-size: 1em; }
   .form-add .form-left {
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    width: 50%;
+    margin-right: 4em; }
   .form-add .form-right {
     display: flex;
     flex-direction: column;
     justify-content: flex-start; }
   .form-add #map-view {
     padding-left: 30em;
-    width: inherit; }
+    width: 100%;
+    height: 100%; }
   .form-add form label {
     font-weight: bold;
     color: #772e25; }
@@ -310,5 +322,58 @@ textarea {
     margin-top: 2em; }
   .container-profile-edit form {
     width: 800px; }
+
+.container-add-book {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 10px auto;
+  width: 600px;
+  margin: 10px 10px; }
+  .container-add-book input {
+    width: 600px;
+    margin: 10px auto; }
+
+#container-addbook {
+  background-image: url("/images/image2.jpg");
+  background-repeat: repeat;
+  height: 1080px;
+  display: flex;
+  margin-top: 10px; }
+  #container-addbook h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+
+.container-edit {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  width: 90px; }
+
+.container-edit-submit {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  margin-right: 700px;
+  margin-top: 20px; }
+
+.container-edit-delete {
+  background-color: #772e25ff;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 700px;
+  margin-top: 20px; }
+
+.style-body-pages-editbook {
+  max-width: 62em;
+  padding: 0 1em;
+  margin: 3em auto 5em auto; }
+
+.logo {
+  width: 9em; }
 
 /*# sourceMappingURL=style.css.map */

@@ -6,6 +6,7 @@ const routerguard = require('../middleware/route-guard');
 router.get('/', (req, res, next) => {
   Book.find()
     .then((books) => {
+      console.log(books);
       res.render('book/list', { books });
     })
     .catch((error) => next(error)); // maybe  add sort

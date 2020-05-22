@@ -3,7 +3,7 @@
   {{#if owner}} 
   <h1>My Profile</h1>
   {{else}}
-  <h1>{{userProfile.name}}</h1>
+  <h1>{{userProfile.name}}s Profile</h1>
   {{/if}}  
 
 
@@ -11,14 +11,14 @@
 
     <div class='container-profile-text'>
       <h2>{{userProfile.name}}</h2><br>
-      <h5>My contact</h5>
+      <h5>Contact</h5>
       <h6>{{userProfile.email}}</h6><br>
-      <h5>About me</h5>
+      <h5>About</h5>
       <p>{{userProfile.about}}</p><br>
     </div>
 
     <div class='container-profile'>
-      <img id="profile-picture" src="{{userProfile.avatar}}" alt="" srcset="">
+      <img id="profile-picture" src="{{user.avatar}}" alt="">
     </div>
   </div> 
 

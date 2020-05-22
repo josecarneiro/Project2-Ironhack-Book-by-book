@@ -1,34 +1,45 @@
 
 <div class='style-body-pages'>
   <div class="user-books"> 
-  <h2>All books from {{books.0.userCreator.name}}</h2>
+    <h2>All books from {{books.0.userCreator.name}}</h2>
+    
+    {{#if owner}}
     <ul class="user-books">
       {{#each books}}
-      <div class='box-homepage-books'>
+        <div class='box-homepage-books'>
         <div>
           <img src="{{thumb}}" alt="{{title}}">
         </div>
         <div class='box-homepage-user'>
           <a href="/book/{{_id}}">
             <h2>{{bookTitle}}</h2>
-            <h4>{{author}}</h4>
-            </a>
-        <div>     
-          {{#if ../owner}}      
-          <span> 
-          <a href="/profile/{{userCreator._id}}"> {{userCreator.name}} Profile</a> 
-                 
-          
-           <a href="/book/{{_id}}/edit">Edit this book</a>
-          
-          </span> 
-          {{/if}}
 
-        </div>
+            <h5>{{author}}</h5>
+          </a>
+          <a href="/book/{{_id}}/edit">
+          <button type='submit' class='container-edit'>Edit</button></a>
         </div>
       </div>
       {{/each}}
     </ul>
+    {{else}}
+        <ul class="user-books">
+      {{#each books}}
+        <div class='box-homepage-books'>
+        <div>
+          <img src="{{thumb}}" alt="{{title}}">
+
+        </div>
+        <div class='box-homepage-user'>
+          <a href="/book/{{_id}}">
+            <h2>{{bookTitle}}</h2>
+            <h5>{{author}}</h5>
+          </a>
+        </div>
+      </div>
+      {{/each}}
+    </ul>
+    {{/if}}
 
   </div>  
 </div>  
