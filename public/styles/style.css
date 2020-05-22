@@ -108,7 +108,7 @@ textarea {
   background-image: url("/images/homepage.jpg");
   background-size: cover;
   background-repeat: repeat;
-  height: 1080px;
+  height: -webkit-fill-available;
   display: flex;
   flex-direction: row; }
 
