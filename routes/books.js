@@ -147,7 +147,6 @@ router.post('/:id/edit', routeGuard, (req, res, next) => {
       bookTitle,
       bookComment,
       author,
-      thumb,
       description,
       userCreator: req.user._id
       // location: { // if update geolocatio, everthing breaks
