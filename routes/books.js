@@ -164,21 +164,16 @@ router.post('/:id/delete', routeGuard, (req, res, next) => {
     .then((result) => {
       const bookOwner = result.userCreator.toString();
       const userLog = cookiesId.toString();
-
+    
+    
       if (bookOwner === userLog) {
-        console.log('autorizado');
-        Book.findByIdAndDelete(id)
-          .then(() => {
-            res.redirect('/list');
-          })
-          .catch((error) => {
-            console.log(error);
-            next(error);
-          });
+        return Book.findByIdAndDelete(id);
       } else {
-        console.log('nao autorizado');
-        res.redirect('/');
+        return Promise.reject(new Error('User not authorized'));
       }
+    })
+    .then(() => {
+      res.redirect('/list');
     })
     .catch((error) => next(error));
 });
